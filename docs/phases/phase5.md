@@ -1,4 +1,4 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5: Mark an article as read or hidden, Organize Collections (1 day)
 
 ## Rails
 ### Models

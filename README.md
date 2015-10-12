@@ -40,7 +40,7 @@ I will set up a full JSON API for articles and feeds.
 
 ### Phase 2: Flux Architecture, Add Feeds to Collections, Save Articles (3.5 days)
 
-In Phase 2 I will being to add organization to articles and feeds. Feeds from
+In Phase 2 I will begin to add organization to articles and feeds. Feeds from
 various sites will be stored in the database (by their url and title). An article will not be saved to the database unless a user saves it. Articles are saved to the
 database one time and associated with users through saves. When a user clicks
 the link to save an article for later, it will be saved to the database only

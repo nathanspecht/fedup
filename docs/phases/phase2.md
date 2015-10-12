@@ -1,4 +1,4 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+# Phase 2: Flux Architecture, Add Feeds to Collections, Save Articles (3.5 days)
 
 ## Rails
 ### Models
