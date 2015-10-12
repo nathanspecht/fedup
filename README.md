@@ -77,10 +77,10 @@ Users can remove collections and move feeds to different collections.
 Make things look nice with CSS and Bootstrap
 
 ### Bonus
-[ ] Allow users to select from different feed views: title only, magazine,
+- [ ] Allow users to select from different feed views: title only, magazine,
     cards, and full articles.
-[ ] Create an 'Unpin' option for the navbar so that it is only displayed when hovered.
-[ ] Display popularity of an article based on number of views. Organize by most
+- [ ] Create an 'Unpin' option for the navbar so that it is only displayed when hovered.
+- [ ] Display popularity of an article based on number of views. Organize by most
     popular.
 
 
