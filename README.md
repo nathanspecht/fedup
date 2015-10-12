@@ -1,6 +1,6 @@
-# FresherNote
+# Fedup
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][heroku]
 
 [heroku]: http://www.herokuapp.com
 
@@ -31,67 +31,59 @@ Fedup allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)
+### Phase 1: User Authentication, Article and Feed Models and JSON API (1.5 days)
 
-In Phase 1, I will begin by implementing user signup and authentication (using
-BCrypt). There will be a basic landing page after signup that will contain the
-container for the application's root React component. Before building out the
-front end, I will begin by setting up a full JSON API for Notes.
+During Phase 1 I will implement user authentication--signing in and signing up.
+I will set up a full JSON API for articles and feeds.
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Note CRUD (2.5 days)
+### Phase 2: Flux Architecture, Add Feeds to Collections, Save Articles (3.5 days)
 
-Phase 2 is focused on setting up Flux, the React Router, and the React view
-structure for the main application. After the basic Flux architecture has been
-set up, a Note store will be implemented and a set of actions corresponding to
-the needed CRUD functionality created. Once this is done, I will create React
-views for the Notes `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Notes can be created, read, edited and destroyed in the browser. Notes should
-save to the database when the form loses focus or is left idle after editing.
-Lastly, while constructing the views I will start using basic bootstrap for
-styling.
+In Phase 2 I will being to add organization to articles and feeds. Feeds from
+various sites will be stored in the database (by their url and title). An article will not be saved to the database unless a user saves it. Articles are saved to the
+database one time and associated with users through saves. When a user clicks
+the link to save an article for later, it will be saved to the database only
+if it has not yet been saved. I will write `FeedView` and `ArticleView` React
+components along with their associated children, using bootstrap to keep the html
+organized.
 
 [Details][phase-two]
 
-### Phase 3: Notebooks and Tags (2 days)
+### Phase 3: Navigation and Search Bars (1 day)
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook, which has
-its own `Index` view. Create JSON API for Notebooks. Notes can also now be
-tagged with multiple tags. Users can bring up notes in a separate `SearchIndex`
-view by searching for their tags. Once the tag search is implemented, I will
-extend this to a fuzzy search through every Note's content.
+I will create the `NavBar` and `SearchBar` React components.
 
 [Details][phase-three]
 
-### Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: Tags and Collections (1 day)
 
-Using quill.js, allow for complex styling of notes.
+Allow users to add tags to articles and view articles based on tags. Tagging an article will
+save it to the database if it is not yet saved. Taggings will be associated with users.
+In this way, separate users will have their own set of tags on any
+given article. Allow users to create collections and add feeds to these collections.
 
 [Details][phase-four]
 
-### Phase 5: Reminders and Garbage Collection (1 day)
+### Phase 5: Mark an article as read or hidden, Organize Collections (1 day)
 
-Phase 5 introduces two new features. First, users can set reminders on notes
-which will at the time they are set for prompt the user to review and edit the
-given note. In addition, I will implement a feature that asks users to review
-notes once they reach a certain age and ask whether they should be kept,
-archived, or deleted.
+Users can mark an article as read so that it is no longer stored in their feed.
+Users can remove collections and move feeds to different collections.
 
 [Details][phase-five]
 
 ### Phase 6: Styling Cleanup and Seeding (1 day)
 
-Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
+Make things look nice with CSS and Bootstrap
 
-### Bonus Features (TBD)
-- [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Changelogs for Notes
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Multiple sessions
+### Bonus
+[ ] Allow users to select from different feed views: title only, magazine,
+    cards, and full articles.
+[ ] Create an 'Unpin' option for the navbar so that it is only displayed when hovered.
+[ ] Display popularity of an article based on number of views. Organize by most
+    popular.
+
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

@@ -2,8 +2,7 @@
 - Users have many feeds through collections.
   - Collections have feeds through collectionings.
 - Feeds have many articles.
-- Users have saved articles.
-- Topics have many feeds.
+- Users have many saved articles through saves.
 - Articles have many tags through taggings.
 
 ## articles
@@ -11,7 +10,13 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-url         | string    | not null
+author      | string    | not null
+categories  | string    | not null
+link        | string    | not null, indexed, unique
+content     | string    | not null
+date        | string    | not null
+content     | string    | not null
+snippet     | string    | not null
 feed_id     | integer   | not null, foreign key (references feeds), indexed
 
 ## feeds
@@ -20,7 +25,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 url         | string    | not null
-topic_id    | string    | not null, foreign key (references topics), indexed
+topic       | string    | not null
 
 ## collections
 column name | data type | details
@@ -28,12 +33,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 user_id     | string    | not null, foreign key (references users), indexed
-
-## topic
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
 
 ## tags
 column name | data type | details
@@ -47,6 +46,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 article_id  | integer   | not null, foreign key (references articles), indexed, unique [tag_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
+user_id     | integer   | foreign key (references users), indexed
 
 ## saves
 column name | data type | details

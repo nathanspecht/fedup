@@ -3,18 +3,21 @@
 ## Rails
 ### Models
 * User
-* Note
+* Article
+* Feed
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::ArticlesController (create, destroy, show, index)
+* Api::FeedsController (create, destroy, show, index)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* feeds/index.json.jbuilder
+* feeds/show.json.jbuilder
+* articles/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
@@ -27,3 +30,4 @@
 
 ## Gems/Libraries
 * BCrypt
+* Google Feed API

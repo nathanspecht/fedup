@@ -1,32 +1,30 @@
-# <App />
-## <navBar />
-- links
-- <collectionDropdown />
+# App
+## NavBar
   - links
-- <addContentButton />
+  - CollectionDropdown
+    - links
+  - AddContentButton
 
-## <searchBar />
-  - <searchDropdown />
+## SearchBar
+  - SearchDropdown
     - links
 
-## <feedView />
-- <feed />
-  - <todayThumbs />
-    - <articleThumb />
-  - <previousThumbs />
-    - <articleThumb />
+## FeedView
+  - TodayThumbs
+    - ArticleThumb
+  - PreviousThumbs
+    - ArticleThumb
 
+## SearchView
+  - SiteThumb
+    - AddToFeedButton
+    - ArticlePreview
 
-## <searchView />
-  - <siteThumb />
-    - <addToFeedButton />
-    - <articlePreview />
-
-## <articleView />
-  - <closeButton />
-  - <articleHeading />
-  - <articleNav />
-    - <saveButton />
-    - <newTagButton />
-    - <tagButton />
-  - <articleContent />
+## ArticleView
+  - CloseButton
+  - ArticleHeading
+  - ArticleNav
+    - SaveButton
+    - NewTagButton
+    - TagButton
+  - ArticleContent

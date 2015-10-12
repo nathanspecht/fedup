@@ -2,31 +2,41 @@
 
 ## Rails
 ### Models
+* Save
 
 ### Controllers
+* SavesController (create, destroy, index)
 
 ### Views
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* FeedView
+  - TodayThumbs
+    - ArticleThumb
+  - PreviousThumbs
+    - ArticleThumb
+
+* ArticleView
+  - CloseButton
+  - ArticleHeading
+  - ArticleNav
+    - SaveButton
+  - ArticleContent
 
 ### Stores
-* Note
+* Article
+* Feed
 
 ### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
+* ApiActions.receiveFeeds
+* ApiActions.receiveFeedArticles
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchFeeds
+* ApiUtil.fetchFeedArticles
+* ApiUtil.fetchSingleArticle
+* ApiUtil.saveArticle
 
 ## Gems/Libraries
 * Flux Dispatcher
