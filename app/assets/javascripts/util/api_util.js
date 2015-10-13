@@ -1,7 +1,7 @@
 ApiUtil = {
   fetchFeeds: function(params) {
     $.ajax({
-      url: 'api/feeds/index',
+      url: 'api/feeds',
       type: 'get',
       dataType: 'json',
       data: { params: params },

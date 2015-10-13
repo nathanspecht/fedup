@@ -16,10 +16,13 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route path="/" component={ App }>
+  <Route path="/" component={App}>
+    <IndexRoute component={FeedIndex} />
   </Route>
 );
 
 $(document).ready(function(){
-  React.render(<Router>{ routes }</Router>, document.getElementById('content'));
+  google.load("feeds", "1", { callback: function () {
+    React.render(<Router>{ routes }</Router>, document.getElementById('content'));
+  } });
 });

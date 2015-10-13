@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+
+.thumbnail {
+  width: 206px;
+  height: 106px;
+  background-position: 50% 25%;
+  background-size: cover;
+  border-radius: 3px;
+  float: left;
+}
+
+.snippet {
+  float: left;
+  width: 400px;
+}
+
+.articlePreview {
+  display: block;
+  clear: both;
+}
+
+.articlePreview:after {
+  display: block;
+  clear: both;
+  content: "";
+}
