@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://www.fedup.herokuapp.com
+[heroku]: https://fedup.herokuapp.com/
 
 ## Minimum Viable Product
 
