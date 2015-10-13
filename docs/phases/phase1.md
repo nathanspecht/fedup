@@ -13,7 +13,7 @@
 * Api::FeedsController (create, destroy, show, index)
 
 ### Views
-* users/new.html.erb
+* users/new.html.erbm
 * session/new.html.erb
 * feeds/index.json.jbuilder
 * feeds/show.json.jbuilder

@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 
     if user
       login(user)
+      redirect_to static_pages_url
     else
       flash.now[:errors] = "Invalid Login."
       render :new
