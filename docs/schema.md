@@ -13,7 +13,7 @@ title       | string    | not null
 author      | string    | not null
 categories  | string    | not null
 link        | string    | not null, indexed, unique
-content     | string    | not null
+content     | text      | not null
 date        | string    | not null
 snippet     | string    | not null
 feed_id     | integer   | not null, foreign key (references feeds), indexed
@@ -23,7 +23,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-url         | string    | not null
+url         | string    | not null, indexed, unique
 topic       | string    | not null
 
 ## collections
