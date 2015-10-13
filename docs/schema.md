@@ -15,7 +15,6 @@ categories  | string    | not null
 link        | string    | not null, indexed, unique
 content     | string    | not null
 date        | string    | not null
-content     | string    | not null
 snippet     | string    | not null
 feed_id     | integer   | not null, foreign key (references feeds), indexed
 

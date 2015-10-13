@@ -2,6 +2,7 @@
 
 ## Rails
 ### Models
+* Update feed model to query database by topic
 
 ### Controllers
 
