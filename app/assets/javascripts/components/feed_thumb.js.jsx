@@ -15,7 +15,7 @@ FeedThumb = React.createClass({
 
   showFeed: function() {
     var feedUrl = "feeds/" + this.props.feed.id;
-    this.history.pushState(null, feedUrl, {feed: this.props.feed});
+    this.history.pushState(null, feedUrl);
   },
 
   render: function () {

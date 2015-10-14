@@ -12,6 +12,17 @@
       return _feeds.slice();
     },
 
+    find: function(id) {
+      var found = null;
+      _feeds.forEach(function(feed){
+        if (feed.id === parseInt(id)) {
+          found = feed;
+        }
+      });
+
+      return found;
+    },
+
     addChangeListener: function(callback) {
       this.on(CHANGED_FEEDS, callback);
     },

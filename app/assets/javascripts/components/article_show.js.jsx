@@ -14,7 +14,7 @@ FeedShow = React.createClass({
 
   render: function() {
     return (
-      <div className="feedIndex">
+      <div className="articleShow">
         <h1>{this.state.feed.title}</h1>
         <div className="tagline">#{this.state.feed.topic}</div>
         {this.state.articles.map(function(article){

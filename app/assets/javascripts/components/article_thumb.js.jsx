@@ -9,6 +9,10 @@ ArticleThumb = React.createClass({
     this.addImage();
   },
 
+  showArticle: function() {
+    
+  },
+
   render: function () {
     return (
       <div className="article-preview">
