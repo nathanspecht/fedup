@@ -23,7 +23,7 @@ h4 {
   font-family: helvetica;
 }
 
-.thumbnail {
+.thumb-image {
   width: 206px;
   height: 106px;
   margin-right: 10px;
@@ -39,13 +39,19 @@ h4 {
   color: #A0A0A0;
 }
 
-.articlePreview {
+.feed-preview {
   width: 670px;
   display: block;
   clear: both;
 }
 
-.articlePreview:after {
+.feed-preview:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.article-preview:after {
   display: block;
   clear: both;
   content: "";

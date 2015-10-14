@@ -1,38 +1,28 @@
 FeedThumb = React.createClass({
-  loadFeed: function () {
+  getInitialState: function(){
+    return { entries: [] };
+  },
+
+  loadFeeds: function () {
     var rssfeed = new google.feeds.Feed(this.props.feed.url);
     rssfeed.load(function(result){
-        var thumbText = React.findDOMNode(this.refs.thumbText);
-        var thumbImage = React.findDOMNode(this.refs.thumbImage);
-
-        var imageSrc =
-          $(result.feed.entries[0].content).find('img').eq(0).attr('src');
-        thumbImage.style.backgroundImage = "url(" + imageSrc + ")";
-        thumbImage.className = "thumbnail";
-
-        var snippet = document.createElement("snippet");
-        var title = document.createElement("h4");
-
-        title.innerHTML = result.feed.entries[0].title;
-        snippet.innerHTML = result.feed.entries[0].contentSnippet;
-        snippet.className = "snippet";
-
-        thumbText.appendChild(title);
-        thumbText.appendChild(snippet);
+      this.setState({ entries: result.feed.entries });
     }.bind(this));
   },
 
   componentDidMount: function() {
-    this.loadFeed();
+    this.loadFeeds();
   },
 
   render: function () {
     return (
-      <div className="articlePreview">
+      <div className="feed-preview">
         <h3>{this.props.feed.title}</h3>
-        <div ref="thumbImage"></div>
-        <div ref="thumbText" className="thumbText">
-        </div>
+        {
+          this.state.entries.slice(0, 2).map(function(entry){
+            return <ArticleThumb entry={entry} />;
+          })
+        }
       </div>
     );
   }
