@@ -1,17 +1,20 @@
 FeedThumb = React.createClass({
   getInitialState: function(){
-    return { entries: [] };
+    return { articles: [] };
   },
 
-  loadFeeds: function () {
-    var rssfeed = new google.feeds.Feed(this.props.feed.url);
-    rssfeed.load(function(result){
-      this.setState({ entries: result.feed.entries });
-    }.bind(this));
+  // loadFeed: function () {
+  //   var rssfeed = new google.feeds.Feed(this.props.feed.url);
+  //   rssfeed.load(function(result){
+  //     this.setState({ articles: result.feed.entries });
+  //   }.bind(this));
+  // },
+  _updateArticles: function(articles) {
+    this.setState({articles: articles});
   },
 
   componentDidMount: function() {
-    this.loadFeeds();
+    ApiUtil.fetchArticles(this.props.feed, this._updateArticles);
   },
 
   render: function () {
@@ -19,8 +22,8 @@ FeedThumb = React.createClass({
       <div className="feed-preview">
         <h3>MOST RECENT FROM <span>{this.props.feed.title.toUpperCase()}</span></h3>
         {
-          this.state.entries.slice(0, 2).map(function(entry){
-            return <ArticleThumb entry={entry} />;
+          this.state.articles.slice(0, 2).map(function(article){
+            return <ArticleThumb key={article.link} article={article} />;
           })
         }
       </div>

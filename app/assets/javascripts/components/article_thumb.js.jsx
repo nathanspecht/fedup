@@ -1,7 +1,7 @@
 ArticleThumb = React.createClass({
   addImage: function() {
     var imageDiv = React.findDOMNode(this.refs.thumbImage);
-    var imageSrc = $(this.props.entry.content).find('img').eq(0).attr('src');
+    var imageSrc = $(this.props.article.content).find('img').eq(0).attr('src');
     imageDiv.style.backgroundImage = "url(" + imageSrc + ")";
   },
 
@@ -14,8 +14,8 @@ ArticleThumb = React.createClass({
       <div className="article-preview">
         <div ref="thumbImage" className="thumb-image"></div>
         <div className="thumb-text">
-          <h4>{this.props.entry.title}</h4>
-          <div className="snippet">{this.props.entry.contentSnippet}</div>
+          <h4>{this.props.article.title}</h4>
+          <div className="snippet">{this.props.article.contentSnippet}</div>
         </div>
       </div>
     );

@@ -9,5 +9,12 @@ ApiUtil = {
         ApiActions.receiveAll(feeds);
       }
     });
+  },
+
+  fetchArticles: function(feed, callback) {
+    var rssfeed = new google.feeds.Feed(feed.url);
+    rssfeed.load(function(result){
+      callback(result.feed.entries);
+    });
   }
 };
