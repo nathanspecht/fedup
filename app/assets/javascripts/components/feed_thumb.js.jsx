@@ -2,15 +2,20 @@ FeedThumb = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function(){
-    return { articles: [] };
+    return { articles: ArticleStore.findByFeed(this.props.feed) };
   },
 
-  _updateArticles: function(articles) {
-    this.setState({articles: articles});
+  _articlesUpdated: function() {
+    this.setState({articles: ArticleStore.findByFeed(this.props.feed)});
   },
 
-  componentDidMount: function() {
-    ApiUtil.fetchArticles(this.props.feed, this._updateArticles);
+  componentDidMount: function(){
+    ArticleStore.addChangeListener(this._articlesUpdated);
+    ApiUtil.fetchArticles(this.props.feed);
+  },
+
+  componentWillUnmount: function(){
+    ArticleStore.removeChangeListener(this._articlesUpdated);
   },
 
   showFeed: function() {

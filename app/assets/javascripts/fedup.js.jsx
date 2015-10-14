@@ -3,6 +3,10 @@ var Router = ReactRouter.Router;
 var IndexRoute = ReactRouter.IndexRoute;
 
 var App = React.createClass({
+  componentDidMount: function() {
+    ApiUtil.fetchFeeds();
+  },
+
   render: function() {
     return (
       <div>

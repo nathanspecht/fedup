@@ -11,11 +11,10 @@ ApiUtil = {
     });
   },
 
-  fetchArticles: function(feed, callback) {
+  fetchArticles: function(feed) {
     var rssfeed = new google.feeds.Feed(feed.url);
     rssfeed.load(function(result){
-      ApiActions.receiveArticles(result.feed.entries);
-      callback(result.feed.entries);
+      ApiActions.receiveArticles(result.feed.entries, feed);
     });
   }
 };

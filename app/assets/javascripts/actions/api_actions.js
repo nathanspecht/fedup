@@ -5,10 +5,10 @@ ApiActions = {
       feeds: feeds
     });
   },
-  receiveArticles: function(articles) {
+  receiveArticles: function(articles, feed) {
     AppDispatcher.dispatch({
       actionType: ArticleConstants.ARTICLES_RECEIVED,
-      articles: articles
+      articleData: {feed: feed, articles: articles}
     });
   }
 };
