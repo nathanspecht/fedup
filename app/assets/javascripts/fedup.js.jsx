@@ -16,6 +16,7 @@ var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={FeedIndex} />
     <Route path="feeds/:id" component={FeedShow} />
+    <Route path="articles/:title" component={ArticleShow} />
   </Route>
 );
 

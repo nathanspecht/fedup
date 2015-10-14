@@ -1,26 +1,19 @@
-FeedShow = React.createClass({
+ArticleShow = React.createClass({
   getInitialState: function() {
-    var feed = FeedStore.find(this.props.params.id);
-    return {feed: feed, articles: []};
-  },
-
-  _updateArticles: function(articles) {
-    this.setState({articles: articles});
+    return { article: this.props.location.query.article };
   },
 
   componentDidMount: function() {
-    ApiUtil.fetchArticles(this.state.feed, this._updateArticles);
+    articleContent = React.findDOMNode(this.refs.articleContent);
+    articleContent.innerHTML = this.state.article.content;
   },
 
   render: function() {
     return (
-      <div className="articleShow">
-        <h1>{this.state.feed.title}</h1>
-        <div className="tagline">#{this.state.feed.topic}</div>
-        {this.state.articles.map(function(article){
-           return <ArticleThumb key={article.link} article={article} />;
-        })
-      }</div>
+      <div className="article-show">
+        <h1>{this.state.article.title}</h1>
+        <div ref="articleContent"></div>
+      </div>
     );
   }
 });

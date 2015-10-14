@@ -82,3 +82,13 @@ h4 {
   color: #B4B3B2;
   font-size: 12px;
 }
+
+.article-show {
+  width: 800px;
+}
+
+a {
+  color: gray;
+  font-weight: lighter;
+  text-decoration: none;
+}
