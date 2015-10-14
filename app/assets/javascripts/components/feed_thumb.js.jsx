@@ -31,7 +31,7 @@ FeedThumb = React.createClass({
       <div className="articlePreview">
         <h3>{this.props.feed.title}</h3>
         <div ref="thumbImage"></div>
-        <div ref="thumbText">
+        <div ref="thumbText" className="thumbText">
         </div>
       </div>
     );
