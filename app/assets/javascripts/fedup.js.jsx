@@ -15,6 +15,7 @@ var App = React.createClass({
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={FeedIndex} />
+    <Route path="feeds/:id" component={FeedShow} />
   </Route>
 );
 

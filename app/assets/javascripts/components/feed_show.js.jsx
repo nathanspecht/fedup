@@ -1,28 +1,23 @@
 FeedShow = React.createClass({
   getInitialState: function() {
-    return { feeds: FeedStore.all() };
+    return {articles: []};
   },
 
-  _feedChange: function() {
-    this.setState({ feeds: FeedStore.all() });
+  _updateArticles: function(articles) {
+    this.setState({articles: articles});
   },
 
   componentDidMount: function() {
-    ApiUtil.fetchFeeds();
-    FeedStore.addChangeListener(this._feedChange);
-  },
-
-  componenetWillUnmount: function() {
-    FeedStore.removeChangeListener(this._feedChange);
+    ApiUtil.fetchArticles(this.props.location.query.feed, this._updateArticles);
   },
 
   render: function() {
     return (
       <div className="feedIndex">
-        <h1>{this.props.feed.title}</h1>
-        <div className="tagline">{this.props.feed.topic}</div>
-        { this.state.feeds.map(function(feed){
-            return <FeedThumb key={feed.id} feed={feed} />;
+        <h1>{this.props.location.query.feed.title}</h1>
+        <div className="tagline">#{this.props.location.query.feed.topic}</div>
+        {this.state.articles.map(function(article){
+           return <ArticleThumb key={article.id} article={article} />;
         })
       }</div>
     );

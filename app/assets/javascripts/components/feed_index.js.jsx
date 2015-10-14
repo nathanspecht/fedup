@@ -1,4 +1,5 @@
 FeedIndex = React.createClass({
+
   getInitialState: function() {
     return { feeds: FeedStore.all() };
   },

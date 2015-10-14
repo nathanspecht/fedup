@@ -22,14 +22,19 @@ h4 {
   margin-bottom: 4px;
 }
 
-h3 {
+.h3 {
   margin-top: 65px;
   font-size: 12px;
   color: #B4B3B2;
 }
 
-h3 > span {
+.h3 > .feed-link {
   color: black;
+}
+
+.h3 > .feed-link:hover {
+  cursor: pointer;
+  color: #B4B3B2;
 }
 
 #content {
