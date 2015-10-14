@@ -1,6 +1,6 @@
 ArticleShow = React.createClass({
   getInitialState: function() {
-    return { article: this.props.location.query.article };
+    return { article: ArticleStore.find(this.props.params.title) };
   },
 
   componentDidMount: function() {

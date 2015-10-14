@@ -13,7 +13,7 @@ ArticleThumb = React.createClass({
 
   showArticle: function() {
     var articleUrl = "articles/" + this.props.article.title;
-    this.history.pushState(null, articleUrl, {article: this.props.article});
+    this.history.pushState(null, articleUrl);
   },
 
   render: function () {

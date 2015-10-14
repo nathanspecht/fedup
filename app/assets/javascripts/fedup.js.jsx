@@ -5,9 +5,12 @@ var IndexRoute = ReactRouter.IndexRoute;
 var App = React.createClass({
   render: function() {
     return (
-        <div>
+      <div>
+        <Sidebar />
+        <div className="page">
           { this.props.children }
         </div>
+      </div>
     );
   }
 });

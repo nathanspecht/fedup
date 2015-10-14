@@ -1,0 +1,3 @@
+ArticleConstants = {
+  ARTICLES_RECEIVED: "ARTICLES_RECEIVED"
+};
