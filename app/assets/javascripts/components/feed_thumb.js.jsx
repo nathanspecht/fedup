@@ -17,7 +17,7 @@ FeedThumb = React.createClass({
   render: function () {
     return (
       <div className="feed-preview">
-        <h3>{this.props.feed.title}</h3>
+        <h3>MOST RECENT FROM <span>{this.props.feed.title.toUpperCase()}</span></h3>
         {
           this.state.entries.slice(0, 2).map(function(entry){
             return <ArticleThumb entry={entry} />;

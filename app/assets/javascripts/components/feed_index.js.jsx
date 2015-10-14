@@ -18,9 +18,11 @@ FeedIndex = React.createClass({
 
   render: function() {
     return (
-      <div className="feedIndex">{
-        this.state.feeds.map(function(feed){
-          return <FeedThumb key={feed.id} feed={feed} />;
+      <div className="feedIndex">
+        <h1>All</h1>
+        <div className="tagline">The most recent stories in your fedup today</div>
+        { this.state.feeds.map(function(feed){
+            return <FeedThumb key={feed.id} feed={feed} />;
         })
       }</div>
     );
