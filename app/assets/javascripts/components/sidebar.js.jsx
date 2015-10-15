@@ -8,14 +8,6 @@ Sidebar = React.createClass({
              expandIcon: "expand-icon"};
   },
 
-  goHome: function() {
-    this.history.pushState(null, "/");
-  },
-
-  goSaved: function() {
-    this.history.pushState(null, "/saved");
-  },
-
   _feedChange: function() {
     this.setState({feeds: FeedStore.all()});
   },
@@ -56,8 +48,8 @@ Sidebar = React.createClass({
         </div>
         <div className={this.state.hidden}>
             <ul className="nav-menu">
-              <li onClick={this.goHome}>Today</li>
-              <li onClick={this.goSaved}>Saved For Later</li>
+              <Link to="/">Today</Link>
+              <Link to="/saved">Saved For Later</Link>
             </ul>
             <FeedNavList feeds = {this.state.feeds}/>
             <div className="user-options">

@@ -12,11 +12,6 @@ FeedNavList = React.createClass({
     }
   },
 
-  feedLink: function(id) {
-    var url = "feeds/" + id;
-    this.history.pushState(null, url);
-  },
-
   render: function(){
       return (
         <div className="nav-menu feeds">
@@ -27,10 +22,7 @@ FeedNavList = React.createClass({
           <ul className={this.state.hidden}>
             {this.props.feeds.map(function(feed){
               return (
-                <li key={feed.id}
-                    onClick={this.feedLink.bind(this, feed.id)}>
-                  {feed.title}
-                </li>
+                <Link key={feed.id} to={"feeds/" + feed.id}>{feed.title}</Link>
               );
             }.bind(this))}
           </ul>

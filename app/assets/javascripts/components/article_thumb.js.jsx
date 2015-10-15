@@ -7,7 +7,9 @@ ArticleThumb = React.createClass({
   addImage: function() {
     var imageDiv = React.findDOMNode(this.refs.thumbImage);
     var imageSrc = $(this.props.article.content).find('img').eq(0).attr('src');
-    imageDiv.style.backgroundImage = "url(" + imageSrc + ")";
+    if (imageSrc) {
+      imageDiv.style.backgroundImage = "url(" + imageSrc + ")";
+    }
   },
 
   componentDidMount: function() {

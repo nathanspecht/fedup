@@ -1,6 +1,7 @@
 var Route = ReactRouter.Route;
 var Router = ReactRouter.Router;
 var IndexRoute = ReactRouter.IndexRoute;
+window.Link = ReactRouter.Link;
 
 var App = React.createClass({
   componentDidMount: function() {

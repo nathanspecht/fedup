@@ -169,7 +169,17 @@ img {
   display: none;
 }
 
+.nav-menu a {
+  display: block;
+  padding-bottom: 20px;
+}
+
+.nav-menu a:hover {
+  color: black;
+}
+
 .nav-menu li {
+  display: block;
   padding-bottom: 20px;
 }
 
