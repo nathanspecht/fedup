@@ -1,6 +1,5 @@
 class Api::ArticlesController < ApplicationController
   def create
-    debugger
     @article = Article.find_by_link(article_params[:link])
     if @article
       save = Save.new

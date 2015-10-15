@@ -37,6 +37,17 @@
       return savedArticles;
     },
 
+    isSaved: function(article) {
+      var articleIsSaved = false;
+      this.allSaved().forEach(function(savedArticle){
+        if (article.link === savedArticle.link) {
+          articleIsSaved = true;
+        }
+      });
+
+      return articleIsSaved;
+    },
+
     findByFeed: function(feed) {
       var foundArticles = [];
       this.all().forEach(function(article){

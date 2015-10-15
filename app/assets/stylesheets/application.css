@@ -192,7 +192,7 @@ img {
 }
 
 .save-button {
-
+  transition: color 1s;
 }
 
 .user-options {
@@ -238,4 +238,12 @@ img {
   position: relative;
   top: -2px;
   left: -7px;
+}
+
+.unclicked {
+  color: #8A8A8A;
+}
+
+.clicked {
+  color: #6CFF72;
 }

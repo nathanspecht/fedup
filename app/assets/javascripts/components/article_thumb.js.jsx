@@ -18,10 +18,10 @@ ArticleThumb = React.createClass({
 
   render: function () {
     return (
-      <div className="article-preview" onClick={this.showArticle}>
+      <div className="article-preview">
         <div ref="thumbImage" className="thumb-image"></div>
         <div className="thumb-text">
-          <h4>{this.props.article.title}</h4>
+          <h4 onClick={this.showArticle}>{this.props.article.title}</h4>
           <div className="snippet">{this.props.article.contentSnippet}</div>
           <SaveArticleButton article={this.props.article} />
         </div>

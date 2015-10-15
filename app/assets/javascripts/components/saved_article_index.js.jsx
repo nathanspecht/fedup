@@ -20,6 +20,7 @@ SavedArticleIndex = React.createClass({
     return (
       <div className="feedIndex">
         <h1>Saved</h1>
+        <div className="tagline">Your saved articles</div>
         <div>
         {
           this.state.articles.map(function(article){
