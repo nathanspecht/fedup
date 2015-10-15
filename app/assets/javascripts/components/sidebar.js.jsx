@@ -47,7 +47,7 @@ Sidebar = React.createClass({
           }.bind(this))}
         </ul>
         <div className="user-options">
-          <div className="username">{window.CURRENT_USERNAME}</div>
+          <div className="username">{window.CURRENT_USER.username}</div>
           <button className="logout-button"
                   onClick={this.logoutUser}>Logout</button>
         </div>

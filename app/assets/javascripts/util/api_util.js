@@ -11,6 +11,15 @@ ApiUtil = {
     });
   },
 
+  fetchSavedArticles: function(id) {
+    $.ajax({
+      url: 'api/articles',
+      type: 'get',
+      dataType: 'json',
+      data: {userId: id}
+    });
+  },
+
   logout: function() {
     $.ajax({
       url: '/session',

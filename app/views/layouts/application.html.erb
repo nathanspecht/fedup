@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
   <% if current_user %>
   <script type="text/javascript">
-    window.CURRENT_USERNAME = "<%= current_user.username %>";
+    window.CURRENT_USER = {username: "<%= current_user.username %>", userId: "<%= current_user.id %>"}
   </script>
   <% end %>
 </head>

@@ -17,6 +17,13 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
+  has_many :saves,
+  class_name: 'Save',
+  foreign_key: :user_id,
+  primary_key: :id
+
+  has_many :saved_articles, through: :saves, source: :article
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
 
