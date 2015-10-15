@@ -11,12 +11,26 @@ ApiUtil = {
     });
   },
 
-  fetchSavedArticles: function(id) {
+  fetchSavedArticles: function() {
     $.ajax({
       url: 'api/articles',
       type: 'get',
       dataType: 'json',
-      data: {userId: id}
+      success: function(articles) {
+        ApiActions.receiveSavedArticles(articles);
+      }
+    });
+  },
+
+  saveArticle: function(article) {
+    $.ajax({
+      url: 'api/articles',
+      type: 'post',
+      dataType: 'json',
+      data: { article: article },
+      success: function(article) {
+        ApiActions.receiveSavedArticles([article]);
+      }
     });
   },
 

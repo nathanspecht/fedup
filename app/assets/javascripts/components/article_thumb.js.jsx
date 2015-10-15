@@ -23,6 +23,7 @@ ArticleThumb = React.createClass({
         <div className="thumb-text">
           <h4>{this.props.article.title}</h4>
           <div className="snippet">{this.props.article.contentSnippet}</div>
+          <SaveArticleButton article={this.props.article} />
         </div>
       </div>
     );

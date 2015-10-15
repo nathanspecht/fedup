@@ -17,7 +17,7 @@
 h1 {
   margin-bottom: 0px;
   margin-top: 0px;
-  padding-top: 40px;
+  padding-top: 20px;
   font-size: 26px;
   font-weight: 700;
 }
@@ -26,6 +26,10 @@ h4 {
   margin-bottom: 4px;
   font-size: 14px;
   font-weight: 700;
+}
+
+h3 {
+  margin-top: 10px;
 }
 
 .h3 {
@@ -44,7 +48,7 @@ h4 {
 }
 
 .page {
-  margin-left: 280px;
+  margin-left: 270px;
   font-family: helvetica;
 }
 
@@ -111,15 +115,27 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+  margin-right: auto;
+  padding: 15px;
+  padding-left: 0;
 }
 
 .sidebar {
   font-family: helvetica;
   background-color: #F7F7F7;
-  width: 210px;
   height: 100%;
   clear: both;
   position: fixed;
+  transition: width 0.5s;
+}
+
+.compact {
+  width: 50px;
+}
+
+.full {
+  width: 210px;
 }
 
 .nav-menu {
@@ -135,15 +151,33 @@ img {
   top: 24%;
 }
 
-.nav-menu > li {
+.nav-menu h5 {
+  padding-bottom: 20px;
+  font-weight: bolder;
+  float: left;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: block;
+  clear: both;
+  position: relative;
+  left: 19px;
+}
+
+.nav-menu ul.hidden {
+  display: none;
+}
+
+.nav-menu li {
   padding-bottom: 20px;
 }
 
-.nav-menu > li:hover {
+.nav-menu li:hover {
   color: black;
 }
 
-.logout-button {
+.button {
   border-radius: 4px;
   border: 1px solid #8A8A8A;
   background: none;
@@ -153,13 +187,17 @@ img {
   margin-right: 25px;
 }
 
-.logout-button:hover {
+.button:hover {
   background-color: #F7FFF9;
+}
+
+.save-button {
+
 }
 
 .user-options {
   position: absolute;
-  top: 92%;
+  top: 90%;
   left: 20%;
   font-size: 13px;
   font-weight: lighter;
@@ -170,4 +208,34 @@ img {
 .username {
   margin-left: 30px;
   margin-bottom: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.expand-icon {
+  position: absolute;
+  left: 30%;
+  top: 5%;
+}
+
+.expand-bar {
+  width: 20px;
+  height: 3px;
+  background-color: black;
+  margin-bottom: 3px;
+  display: block;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+  padding: 0;
+  display: inline;
+  float: left;
+  line-height: 0px;
+  position: relative;
+  top: -2px;
+  left: -7px;
 }

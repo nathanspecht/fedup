@@ -2,14 +2,15 @@
 #
 # Table name: articles
 #
-#  id      :integer          not null, primary key
-#  title   :string           not null
-#  author  :string           not null
-#  link    :string           not null
-#  content :text             not null
-#  date    :date             not null
-#  snippet :text             not null
-#  feed_id :integer          not null
+#  id             :integer          not null, primary key
+#  title          :string           not null
+#  author         :string           not null
+#  link           :string           not null
+#  content        :text             not null
+#  publishedDate  :date             not null
+#  contentSnippet :text             not null
+#  feed_id        :integer          not null
+#  categories     :text
 #
 
 class Article < ActiveRecord::Base
@@ -17,8 +18,9 @@ class Article < ActiveRecord::Base
             :author,
             :link,
             :content,
-            :date,
-            :snippet,
+            :publishedDate,
+            :contentSnippet,
+            :categories,
             :feed_id,
             presence: true
 
@@ -33,4 +35,5 @@ class Article < ActiveRecord::Base
   primary_key: :id
 
   has_many :savers, through: :saves, source: :user
+
 end

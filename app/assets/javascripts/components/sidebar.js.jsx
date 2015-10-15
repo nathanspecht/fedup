@@ -2,16 +2,18 @@ Sidebar = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function() {
-    return { feeds: FeedStore.all() };
+    return { feeds: FeedStore.all(),
+             hidden: "hidden",
+             style: "sidebar compact",
+             expandIcon: "expand-icon"};
   },
 
   goHome: function() {
     this.history.pushState(null, "/");
   },
 
-  feedLink: function(id) {
-    var url = "feeds/" + id;
-    this.history.pushState(null, url);
+  goSaved: function() {
+    this.history.pushState(null, "/saved");
   },
 
   _feedChange: function() {
@@ -30,27 +32,40 @@ Sidebar = React.createClass({
     ApiUtil.logout();
   },
 
+  showSidebar: function() {
+    this.setState({ hidden: "",
+                    style: "sidebar full",
+                    expandIcon: "expand-icon hidden"});
+  },
+
+  hideSidebar: function() {
+    this.setState({ hidden: "hidden",
+                    style: "sidebar compact",
+                    expandIcon: "expand-icon"});
+  },
+
   render: function(){
     return (
-      <div className="sidebar">
-        <ul className="nav-menu">
-          <li onClick={this.goHome}>Today</li>
-          <li>Saved For Later</li>
-        </ul>
-        <ul className="nav-menu feeds">
-          {this.state.feeds.map(function(feed){
-            return (
-              <li onClick={this.feedLink.bind(this, feed.id)}>
-                {feed.title}
-              </li>
-            );
-          }.bind(this))}
-        </ul>
-        <div className="user-options">
-          <div className="username">{window.CURRENT_USER.username}</div>
-          <button className="logout-button"
-                  onClick={this.logoutUser}>Logout</button>
+      <div className={this.state.style}
+           onMouseEnter={this.showSidebar}
+           onMouseLeave={this.hideSidebar}>
+        <div className={this.state.expandIcon}>
+          <div className="expand-bar"></div>
+          <div className="expand-bar"></div>
+          <div className="expand-bar"></div>
         </div>
+        <div className={this.state.hidden}>
+            <ul className="nav-menu">
+              <li onClick={this.goHome}>Today</li>
+              <li onClick={this.goSaved}>Saved For Later</li>
+            </ul>
+            <FeedNavList feeds = {this.state.feeds}/>
+            <div className="user-options">
+              <div className="username">{window.CURRENT_USER.username}</div>
+              <button className="button"
+                      onClick={this.logoutUser}>Logout</button>
+            </div>
+          </div>
       </div>
     );
   }

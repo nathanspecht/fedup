@@ -10,5 +10,11 @@ ApiActions = {
       actionType: ArticleConstants.ARTICLES_RECEIVED,
       articleData: {feed: feed, articles: articles}
     });
+  },
+  receiveSavedArticles: function(articles) {
+    AppDispatcher.dispatch({
+      actionType: ArticleConstants.SAVED_ARTICLES_RECEIVED,
+      articles: articles
+    });
   }
 };

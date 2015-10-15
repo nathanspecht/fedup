@@ -5,6 +5,7 @@ var IndexRoute = ReactRouter.IndexRoute;
 var App = React.createClass({
   componentDidMount: function() {
     ApiUtil.fetchFeeds();
+    ApiUtil.fetchSavedArticles();
   },
 
   render: function() {
@@ -23,6 +24,7 @@ var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={FeedIndex} />
     <Route path="feeds/:id" component={FeedShow} />
+    <Route path="saved" component={SavedArticleIndex} />
     <Route path="articles/:title" component={ArticleShow} />
   </Route>
 );

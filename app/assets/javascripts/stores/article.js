@@ -1,32 +1,46 @@
 (function(root) {
   'use strict';
   var _articles = {};
+  var _savedArticles = {};
   var ADDED_ARTICLES = "added articles";
 
   var addArticles = function(articleData) {
     var feed = articleData.feed;
     var articles = articleData.articles;
     articles.forEach(function(article){
-      article.feedTitle = feed.title;
+      article.feed_id = feed.id;
       _articles[article.link] = article;
+    });
+  };
+
+  var addSavedArticles = function(articles) {
+    articles.forEach(function(article){
+      _savedArticles[article.link] = article;
     });
   };
 
   root.ArticleStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
       var articles = [];
-      for (var url in _articles) {
-        articles.push(_articles[url]);
+      for (var link in _articles) {
+        articles.push(_articles[link]);
       }
 
       return articles;
     },
 
+    allSaved: function() {
+      var savedArticles = [];
+      for (var link in _savedArticles){
+        savedArticles.push(_savedArticles[link]);
+      }
+      return savedArticles;
+    },
+
     findByFeed: function(feed) {
-      var title = feed.title;
       var foundArticles = [];
       this.all().forEach(function(article){
-        if (article.feedTitle === feed.title) {
+        if (article.feed_id === feed.id) {
           foundArticles.push(article);
         }
       });
@@ -58,6 +72,10 @@
     switch(payload.actionType) {
     case ArticleConstants.ARTICLES_RECEIVED:
       addArticles(payload.articleData);
+      ArticleStore.emit(ADDED_ARTICLES);
+      break;
+    case ArticleConstants.SAVED_ARTICLES_RECEIVED:
+      addSavedArticles(payload.articles);
       ArticleStore.emit(ADDED_ARTICLES);
       break;
     }

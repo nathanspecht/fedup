@@ -18,9 +18,8 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
 
   has_many :saves,
-  class_name: 'Save',
-  foreign_key: :user_id,
-  primary_key: :id
+  class_name: "Save"
+
 
   has_many :saved_articles, through: :saves, source: :article
 
@@ -52,4 +51,5 @@ class User < ActiveRecord::Base
     user_pass = BCrypt::Password.new(password_digest)
     user_pass.is_password?(password)
   end
+
 end
