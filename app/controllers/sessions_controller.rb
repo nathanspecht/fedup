@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout(current_user)
-    redirect_to new_session_url
+    logout
+    render :new
   end
 end

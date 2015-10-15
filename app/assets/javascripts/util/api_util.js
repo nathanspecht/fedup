@@ -11,6 +11,16 @@ ApiUtil = {
     });
   },
 
+  logout: function() {
+    $.ajax({
+      url: '/session',
+      type: 'delete',
+      success: function() {
+        window.location = "/";
+      }
+    });
+  },
+
   fetchArticles: function(feed) {
     var rssfeed = new google.feeds.Feed(feed.url);
     rssfeed.load(function(result){

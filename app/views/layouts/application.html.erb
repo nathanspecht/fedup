@@ -6,6 +6,11 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <% if current_user %>
+  <script type="text/javascript">
+    window.CURRENT_USERNAME = "<%= current_user.username %>";
+  </script>
+  <% end %>
 </head>
 <body>
 

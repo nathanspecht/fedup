@@ -9,5 +9,5 @@ module ApplicationHelper
 
     token.html_safe
   end
-  
+
 end

@@ -26,6 +26,10 @@ Sidebar = React.createClass({
     FeedStore.removeChangeListener(this._feedChange);
   },
 
+  logoutUser: function() {
+    ApiUtil.logout();
+  },
+
   render: function(){
     return (
       <div className="sidebar">
@@ -42,7 +46,11 @@ Sidebar = React.createClass({
             );
           }.bind(this))}
         </ul>
-        <button className="logout-button">Logout</button>
+        <div className="user-options">
+          <div className="username">{window.CURRENT_USERNAME}</div>
+          <button className="logout-button"
+                  onClick={this.logoutUser}>Logout</button>
+        </div>
       </div>
     );
   }
