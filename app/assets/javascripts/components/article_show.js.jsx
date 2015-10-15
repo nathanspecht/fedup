@@ -12,6 +12,7 @@ ArticleShow = React.createClass({
     return (
       <div className="article-show">
         <h1>{this.state.article.title}</h1>
+        <SaveArticleButton article={this.state.article} />
         <div ref="articleContent"></div>
       </div>
     );

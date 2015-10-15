@@ -87,7 +87,7 @@ h3 {
 }
 
 .article-preview:hover {
-  background-color: #EEF5F8;
+  /*background-color: #EEF5F8;*/
 }
 
 .article-preview:after {
@@ -191,8 +191,38 @@ img {
   background-color: #F7FFF9;
 }
 
+.article-show .save-button {
+  position: absolute;
+  top: 103px;
+  left: 270px;
+}
+
+.article-show h1 {
+  padding-bottom: 70px;
+}
+
 .save-button {
-  transition: color 1s;
+  width: 82px;
+  position: relative;
+  top: 43px;
+  left: 218px;
+  height: 19px;
+  border: 1px solid #D2D2D2;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 3px;
+  font-size: 13px;
+  transition: color 2s;
+}
+
+.save-button > span {
+  position: absolute;
+  top: 13%;
+  left: 32%;
+}
+
+.save-button:hover {
+  background-color: #CEFFCE;
 }
 
 .user-options {

@@ -79,6 +79,8 @@
     }
   });
 
+  ArticleStore.setMaxListeners(100);
+
   AppDispatcher.register(function(payload){
     switch(payload.actionType) {
     case ArticleConstants.ARTICLES_RECEIVED:
