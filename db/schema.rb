@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015164735) do
+ActiveRecord::Schema.define(version: 20151016162705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,27 @@ ActiveRecord::Schema.define(version: 20151015164735) do
 
   add_index "articles", ["feed_id"], name: "index_articles_on_feed_id", using: :btree
   add_index "articles", ["link"], name: "index_articles_on_link", unique: true, using: :btree
+
+  create_table "collectionings", force: :cascade do |t|
+    t.integer  "feed_id"
+    t.integer  "collection_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "collectionings", ["collection_id"], name: "index_collectionings_on_collection_id", using: :btree
+  add_index "collectionings", ["feed_id", "collection_id"], name: "index_collectionings_on_feed_id_and_collection_id", unique: true, using: :btree
+  add_index "collectionings", ["feed_id"], name: "index_collectionings_on_feed_id", using: :btree
+
+  create_table "collections", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "collections", ["user_id", "title"], name: "index_collections_on_user_id_and_title", unique: true, using: :btree
+  add_index "collections", ["user_id"], name: "index_collections_on_user_id", using: :btree
 
   create_table "feeds", force: :cascade do |t|
     t.string "title", null: false

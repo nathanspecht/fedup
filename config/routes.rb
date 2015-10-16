@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :feeds, only: [:create, :destroy, :show, :index]
     resources :articles, only: [:create, :destroy, :show, :index]
     resource :saves, only: [:destroy]
+    resources :collections, only: [:create, :destroy, :index, :show]
   end
 
   resources :users, only: [:new, :create]

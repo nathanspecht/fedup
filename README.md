@@ -11,13 +11,13 @@ Fedup allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
+- [X] Create an account
+- [X] Log in / Log out
 - [ ] Add and remove RSS feeds
 - [ ] Organize feeds into collections
 - [ ] Search available RSS feeds by name or topic
 - [ ] Tag articles with multiple tags
-- [ ] Save articles to be read later
+- [X] Save articles to be read later
 - [ ] Hide articles
 - [ ] Mark articles as read
 

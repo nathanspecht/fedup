@@ -6,17 +6,17 @@
 - Articles have many tags through taggings.
 
 ## articles
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-title       | string    | not null
-author      | string    | not null
-categories  | string    | not null
-link        | string    | not null, indexed, unique
-content     | text      | not null
-publishedDate        | string    | not null
-contentSnippet     | string    | not null
-feed_id     | integer   | not null, foreign key (references feeds), indexed
+column name    | data type | details
+---------------|-----------|-----------------------
+id             | integer   | not null, primary key
+title          | string    | not null
+author         | string    | not null
+categories     | string    | not null
+link           | string    | not null, indexed, unique
+content        | text      | not null
+publishedDate  | string    | not null
+contentSnippet | string    | not null
+feed_id        | integer   | not null, foreign key (references feeds), indexed
 
 ## feeds
 column name | data type | details

@@ -15,4 +15,7 @@ class Feed < ActiveRecord::Base
   class_name: 'Article',
   foreign_key: :feed_id,
   primary_key: :id
+
+  has_many :collectionings
+  has_many :collections, through: :collectionings, source: :collection
 end
