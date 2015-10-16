@@ -8,6 +8,7 @@ class Api::ArticlesController < ApplicationController
       render json: @article if save.save!
     else
       @article = Article.new(article_params)
+      @article.categories ||= "[ ]";
       if @article.save!
         save = Save.new
         save.user_id = current_user.id
