@@ -24,7 +24,6 @@ SavedArticleIndex = React.createClass({
         <div>
         {
           this.state.articles.map(function(article){
-            console.log(article.link);
             return <ArticleThumb key={article.link} article={article} />;
           })
         }

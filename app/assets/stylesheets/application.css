@@ -194,7 +194,8 @@ img {
   color: #969696;
   width: 123px;
   height: 29px;
-  margin-right: 25px;
+  position: absolute;
+  left: 20%;
 }
 
 .button:hover {
@@ -222,7 +223,7 @@ img {
   padding: 0px;
   border-radius: 3px;
   font-size: 13px;
-  transition: color 2s, opacity 2s;
+  transition: color 1s, opacity 1s;
 }
 
 .save-button > span {
@@ -240,7 +241,6 @@ img {
 .user-options {
   position: absolute;
   top: 90%;
-  left: 20%;
   font-size: 13px;
   font-weight: lighter;
   color: #8A8A8A;
@@ -248,8 +248,9 @@ img {
 }
 
 .username {
-  margin-left: 30px;
   margin-bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 .hidden {

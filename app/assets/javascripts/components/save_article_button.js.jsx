@@ -16,25 +16,31 @@ SaveArticleButton = React.createClass({
   },
 
   componentDidMount: function() {
-    ArticleStore.addChangeListener(this._updateSave);
+    // ArticleStore.addChangeListener(this._updateSave);
   },
 
   componentWillUnmount: function() {
-    ArticleStore.removeChangeListener(this._updateSave);
+    // ArticleStore.removeChangeListener(this._updateSave);
   },
 
   unSaveArticle: function() {
     ApiUtil.unSaveArticle(this.props.article);
-    this.setState({ clicked: "unclicked", onClick: this.saveArticle, word: "save" });
+    this.setState({ clicked: "clicked", onClick: null, word: "unsaved" });
+    window.setTimeout(this._makeSave, 1000);
   },
 
-  _hideButton: function() {
-    this.setState({clicked: "hidden"});
+  _makeUnSave: function() {
+    this.setState({clicked: "unclicked", onClick: this.unSaveArticle, word: "unsave"});
+  },
+
+  _makeSave: function() {
+    this.setState({ clicked: "unclicked", onClick: this.saveArticle, word: "save" });
   },
 
   saveArticle: function() {
     ApiUtil.saveArticle(this.props.article);
-    this.setState({ onClick: this.saveArticle, word: "unsave" });
+    this.setState({ clicked: "clicked", onClick: null, word: "saved" });
+    window.setTimeout(this._makeUnSave, 1000);
   },
 
   render: function() {
