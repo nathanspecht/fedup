@@ -311,3 +311,24 @@ img {
   color: #6CFF72;
   opacity: 0;
 }
+
+.category-options{
+  position: absolute;
+  top: 78%;
+  height: 29px;
+  width: 100%;
+  clear: both;
+  display: block;
+}
+
+.submit-button{
+  margin-top: 10px;
+  width: 100%;
+  left: 0%;
+}
+
+.form{
+  position: relative;
+  left: 19%;
+  width: 130px;
+}

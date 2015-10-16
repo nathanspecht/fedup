@@ -57,7 +57,6 @@ ApiUtil = {
     });
   },
 
-
   logout: function() {
     $.ajax({
       url: '/session',
@@ -68,11 +67,22 @@ ApiUtil = {
     });
   },
 
-
   fetchArticles: function(feed) {
     var rssfeed = new google.feeds.Feed(feed.url);
     rssfeed.load(function(result){
       ApiActions.receiveArticles(result.feed.entries, feed);
+    });
+  },
+
+  saveCollection: function(collection) {
+    $.ajax({
+      url: 'api/collections',
+      type: 'post',
+      dataType: 'json',
+      data: {collection: collection},
+      success: function(collection) {
+        ApiActions.receiveCollections([collection]);
+      }
     });
   }
 };

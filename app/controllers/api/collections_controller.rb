@@ -9,9 +9,6 @@ class Api::CollectionsController < ApplicationController
 
   def destroy
   end
-  #
-  # def show
-  # end
 
   def index
     @collections = Collection.includes(:feeds).where({ user_id: current_user.id })
@@ -20,7 +17,7 @@ class Api::CollectionsController < ApplicationController
 
   private
 
-  def article_params
+  def collection_params
     params.require(:collection).permit(:title)
   end
 end

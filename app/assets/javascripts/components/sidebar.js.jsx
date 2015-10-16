@@ -67,13 +67,14 @@ Sidebar = React.createClass({
                   return(
                     <div className="category-li" key={i}>
                     <FeedNavList key={collec.id}
-                                 feeds={collec.feeds}
+                                 feeds={collec.feeds || []}
                                  title={collec.title} />
                     </div>
                   );
                 })
               }
             </ul>
+            <CategoryOptions />
             <div className="user-options">
               <div className="username">{window.CURRENT_USER.username}</div>
               <button className="button"
