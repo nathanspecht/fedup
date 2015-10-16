@@ -222,13 +222,15 @@ img {
   padding: 0px;
   border-radius: 3px;
   font-size: 13px;
-  transition: color 2s;
+  transition: color 2s, opacity 2s;
 }
 
 .save-button > span {
   position: absolute;
   top: 13%;
-  left: 32%;
+  left: 0%;
+  width: 100%;
+  text-align: center;
 }
 
 .save-button:hover {
@@ -286,4 +288,5 @@ img {
 
 .clicked {
   color: #6CFF72;
+  opacity: 0;
 }

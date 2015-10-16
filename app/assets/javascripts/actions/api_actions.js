@@ -16,5 +16,11 @@ ApiActions = {
       actionType: ArticleConstants.SAVED_ARTICLES_RECEIVED,
       articles: articles
     });
+  },
+  removeSavedArticle: function(articleLink) {
+    AppDispatcher.dispatch({
+      actionType: ArticleConstants.SAVED_ARTICLE_REMOVED,
+      articleLink: articleLink
+    });
   }
 };

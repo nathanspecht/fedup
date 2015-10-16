@@ -1,7 +1,7 @@
 SaveArticleButton = React.createClass({
   getInitialState: function() {
     if (ArticleStore.isSaved(this.props.article)) {
-      return { clicked: "hidden", onClick: null, word: "saved" };
+      return { clicked: "unclicked", onClick: this.unSaveArticle, word: "unsave" };
     } else {
       return { clicked: "unclicked", onClick: this.saveArticle, word: "save" };
     }
@@ -9,7 +9,7 @@ SaveArticleButton = React.createClass({
 
   _updateSave: function() {
     if (ArticleStore.isSaved(this.props.article)) {
-      this.setState({ clicked: "hidden", onClick: null, word: "saved" });
+      this.setState({ clicked: "unclicked", onClick: this.unSaveArticle, word: "unsave" });
     } else {
       this.setState({ clicked: "unclicked", onClick: this.saveArticle, word: "save" });
     }
@@ -23,21 +23,25 @@ SaveArticleButton = React.createClass({
     ArticleStore.removeChangeListener(this._updateSave);
   },
 
+  unSaveArticle: function() {
+    ApiUtil.unSaveArticle(this.props.article);
+    this.setState({ clicked: "unclicked", onClick: this.saveArticle, word: "save" });
+  },
+
   _hideButton: function() {
     this.setState({clicked: "hidden"});
   },
 
   saveArticle: function() {
     ApiUtil.saveArticle(this.props.article);
-    this.setState({ clicked: "clicked", onClick: null, word: "saved" });
-    window.setTimeout(this._hideButton, 5000);
+    this.setState({ onClick: this.saveArticle, word: "unsave" });
   },
 
   render: function() {
     className = "save-button " + this.state.clicked;
     return(
       <div className={className}
-           onClick={this.state.onClick}>
+          onClick={this.state.onClick}>
         <span>
           {this.state.word}
         </span>

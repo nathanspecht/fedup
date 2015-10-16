@@ -34,6 +34,18 @@ ApiUtil = {
     });
   },
 
+  unSaveArticle: function(article) {
+    $.ajax({
+      url: 'api/saves',
+      type: 'delete',
+      dataType: 'json',
+      data: { article: article },
+      success: function(data) {
+        ApiActions.removeSavedArticle(data.articleLink);
+      }
+    });
+  },
+
   logout: function() {
     $.ajax({
       url: '/session',

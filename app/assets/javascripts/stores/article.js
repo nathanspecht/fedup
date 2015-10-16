@@ -19,6 +19,10 @@
     });
   };
 
+  var removeSavedArticle = function(articleLink) {
+    delete _savedArticles[articleLink];
+  };
+
   root.ArticleStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
       var articles = [];
@@ -89,6 +93,10 @@
       break;
     case ArticleConstants.SAVED_ARTICLES_RECEIVED:
       addSavedArticles(payload.articles);
+      ArticleStore.emit(ADDED_ARTICLES);
+      break;
+    case ArticleConstants.SAVED_ARTICLE_REMOVED:
+      removeSavedArticle(payload.articleLink);
       ArticleStore.emit(ADDED_ARTICLES);
       break;
     }
