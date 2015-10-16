@@ -1,6 +1,6 @@
 FeedShow = React.createClass({
   getInitialState: function() {
-    var feed = FeedStore.find(this.props.params.id);
+    var feed = FeedStore.find(this.props.params.id) || {};
     return {feed: feed, articles: ArticleStore.findByFeed(feed)};
   },
 

@@ -14,7 +14,7 @@ class Api::CollectionsController < ApplicationController
   # end
 
   def index
-    @collections = Collection.where({ user_id: current_user.id })
+    @collections = Collection.includes(:feeds).where({ user_id: current_user.id })
     render :index
   end
 

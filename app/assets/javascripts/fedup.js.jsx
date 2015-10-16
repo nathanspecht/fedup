@@ -27,7 +27,7 @@ var routes = (
     <IndexRoute component={FeedIndex} />
     <Route path="feeds/:id" component={FeedShow} />
     <Route path="saved" component={SavedArticleIndex} />
-    <Route path="articles/:title" component={ArticleShow} />
+    <Route path="articles/:feed_id/:title" component={ArticleShow} />
   </Route>
 );
 
