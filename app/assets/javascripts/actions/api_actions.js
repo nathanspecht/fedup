@@ -22,5 +22,11 @@ ApiActions = {
       actionType: ArticleConstants.SAVED_ARTICLE_REMOVED,
       articleLink: articleLink
     });
+  },
+  receiveCollections: function(collections) {
+    AppDispatcher.dispatch({
+      actionType: CollectionConstants.COLLECTIONS_RECEIVED,
+      collections: collections
+    });
   }
 };

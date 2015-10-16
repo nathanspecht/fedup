@@ -7,6 +7,7 @@ var App = React.createClass({
   componentDidMount: function() {
     ApiUtil.fetchFeeds();
     ApiUtil.fetchSavedArticles();
+    ApiUtil.fetchCollections();
   },
 
   render: function() {

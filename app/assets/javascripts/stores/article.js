@@ -65,7 +65,7 @@
 
     find: function(title) {
       var found = null;
-      this.all().forEach(function(article){
+      this.all().concat(this.allSaved()).forEach(function(article){
         if (article.title === title) {
           found = article;
         }

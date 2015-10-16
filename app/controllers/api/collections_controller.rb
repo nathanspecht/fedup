@@ -3,19 +3,19 @@ class Api::CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     @collection.user_id = current_user.id
     if @collection.save
-      render json: @article
+      render json: @collection
     end
   end
 
   def destroy
   end
-
-  def show
-  end
+  #
+  # def show
+  # end
 
   def index
-    @collections = Collection.find_by_user_id(current_user.id)
-    render json: @collections
+    @collections = Collection.where({ user_id: current_user.id })
+    render :index
   end
 
   private

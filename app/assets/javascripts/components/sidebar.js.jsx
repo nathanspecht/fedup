@@ -3,6 +3,7 @@ Sidebar = React.createClass({
 
   getInitialState: function() {
     return { feeds: FeedStore.all(),
+             collections: CollectionStore.all(),
              hidden: "hidden",
              style: "sidebar compact",
              expandIcon: "expand-icon"};
@@ -12,12 +13,18 @@ Sidebar = React.createClass({
     this.setState({feeds: FeedStore.all()});
   },
 
+  _collectionChange: function() {
+    this.setState({collections: CollectionStore.all()});
+  },
+
   componentDidMount: function() {
     FeedStore.addChangeListener(this._feedChange);
+    CollectionStore.addChangeListener(this._collectionChange);
   },
 
   componenetWillUnmount: function() {
     FeedStore.removeChangeListener(this._feedChange);
+    CollectionStore.removeChangeListener(this._collectionChange);
   },
 
   logoutUser: function() {
@@ -51,7 +58,22 @@ Sidebar = React.createClass({
               <Link to="/">Today</Link>
               <Link to="/saved">Saved For Later</Link>
             </ul>
-            <FeedNavList feeds = {this.state.feeds}/>
+            <ul className="category-nav">
+              <div className="category-li">
+                <FeedNavList feeds={this.state.feeds} title="All"/>
+              </div>
+              {
+                this.state.collections.map(function(collec, i) {
+                  return(
+                    <div className="category-li" key={i}>
+                    <FeedNavList key={collec.id}
+                                 feeds={collec.feeds}
+                                 title={collec.title} />
+                    </div>
+                  );
+                })
+              }
+            </ul>
             <div className="user-options">
               <div className="username">{window.CURRENT_USER.username}</div>
               <button className="button"

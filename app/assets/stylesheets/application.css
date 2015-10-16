@@ -148,7 +148,14 @@ img {
 }
 
 .nav-menu.feeds {
-  top: 24%;
+  position: relative;
+}
+
+.category-nav {
+  position: absolute;
+  top: 16%;
+  width: 100%;
+  height: 50%;
 }
 
 .nav-menu h5 {
@@ -181,6 +188,19 @@ img {
 .nav-menu li {
   display: block;
   padding-bottom: 20px;
+}
+
+.category-li {
+  display: list-item;
+  padding-bottom: 5px;
+  clear: both;
+  position: relative;
+}
+
+.category-li:after {
+  display: block;
+  content: "";
+  clear: both;
 }
 
 .nav-menu li:hover {

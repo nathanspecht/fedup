@@ -18,7 +18,7 @@ FeedNavList = React.createClass({
           <img className="icon"
                src={this.state.caret}
                onClick={this.toggleList}/>
-          <h5 onClick={this.toggleList}>All</h5>
+             <h5 onClick={this.toggleList}>{this.props.title}</h5>
           <ul className={this.state.hidden}>
             {this.props.feeds.map(function(feed){
               return (
