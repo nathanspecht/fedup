@@ -12,9 +12,16 @@
     _collections[idx] = collection;
   };
 
+
   root.CollectionStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
       return _collections.slice();
+    },
+
+    feedUrls: function(collection) {
+      return collection.feeds.map(function(feed){
+        return feed.url;
+      });
     },
 
     ids: function() {

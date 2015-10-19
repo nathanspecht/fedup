@@ -31,7 +31,7 @@ AddFeedForm = React.createClass({
     return (
       <div className="collection-select">
           { this.state.collections.map(function(collection){
-            if (FeedStore.collectionTitles(this.props.feed).indexOf(collection.title) === -1) {
+            if (CollectionStore.feedUrls(collection).indexOf(this.props.feed.url) === -1) {
               imgClass = "hidden";
               clickAction = this.addToCollection.bind(this, collection);
             } else {
