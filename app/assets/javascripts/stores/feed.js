@@ -7,7 +7,13 @@
     _feeds = feeds;
   };
 
+  var updateFeed = function(feed) {
+    var idx = FeedStore.ids().indexOf(feed.id);
+    _feeds[idx] = feed;
+  };
+
   root.FeedStore = $.extend({}, EventEmitter.prototype, {
+
     all: function() {
       return _feeds.slice();
     },
@@ -23,6 +29,18 @@
       return found;
     },
 
+    ids: function() {
+      return _feeds.map(function(feed){
+        return feed.id;
+      });
+    },
+
+    collectionTitles: function(feed) {
+      return feed.collections.map(function(collection){
+        return collection.title;
+      });
+    },
+
     addChangeListener: function(callback) {
       this.on(CHANGED_FEEDS, callback);
     },
@@ -36,6 +54,10 @@
     switch(payload.actionType) {
     case FeedConstants.FEEDS_RECEIVED:
       resetFeeds(payload.feeds);
+      FeedStore.emit(CHANGED_FEEDS);
+      break;
+    case FeedConstants.FEED_UPDATED:
+      updateFeed(payload.feed);
       FeedStore.emit(CHANGED_FEEDS);
       break;
     }

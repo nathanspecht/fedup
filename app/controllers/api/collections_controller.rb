@@ -3,7 +3,7 @@ class Api::CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     @collection.user_id = current_user.id
     if @collection.save
-      render json: @collection
+      render :show
     end
   end
 
@@ -13,6 +13,10 @@ class Api::CollectionsController < ApplicationController
   def index
     @collections = Collection.includes(:feeds).where({ user_id: current_user.id })
     render :index
+  end
+
+  def show
+    @collection = Collection.find(params[:id])
   end
 
   private

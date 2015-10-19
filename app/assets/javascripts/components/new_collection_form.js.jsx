@@ -27,13 +27,12 @@ NewCollectionForm = React.createClass({
           <label>
             <input type="text"
                    valueLink={this.linkState('title')}
-                   onKeyDown={this._handleKeyDown}
-                   autoFocus/>
+                   onKeyDown={this._handleKeyDown} />
           </label>
           <button className="hidden"
                   onClick={this._addCollection}>Create</button>
         </form>
-        <div className="tagline">
+        <div className="hidden">
           Press enter to add or escape to cancel.
         </div>
       </div>

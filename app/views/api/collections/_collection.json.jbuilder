@@ -1,2 +1,2 @@
-json.extract!(col, :title, :user_id)
+json.extract!(col, :id, :title, :user_id)
 json.feeds col.feeds

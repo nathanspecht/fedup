@@ -28,5 +28,17 @@ ApiActions = {
       actionType: CollectionConstants.COLLECTIONS_RECEIVED,
       collections: collections
     });
+  },
+  updateCollection: function(collection) {
+    AppDispatcher.dispatch({
+      actionType: CollectionConstants.COLLECTION_UPDATED,
+      collection: collection
+    });
+  },
+  updateFeed: function(feed){
+    AppDispatcher.dispatch({
+      actionType: FeedConstants.FEED_UPDATED,
+      feed: feed
+    });
   }
 };

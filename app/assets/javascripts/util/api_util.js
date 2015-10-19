@@ -84,5 +84,18 @@ ApiUtil = {
         ApiActions.receiveCollections([collection]);
       }
     });
+  },
+
+  addFeedToCollection: function(feed, collection) {
+    $.ajax({
+      url: 'api/collectionings',
+      type: 'post',
+      dataType: 'json',
+      data: {collectioning: {feed_id: feed.id, collection_id: collection.id}},
+      success: function(data) {
+        ApiActions.updateCollection(data.collection);
+        ApiActions.updateFeed(data.feed);
+      }
+    });
   }
 };
