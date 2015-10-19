@@ -382,7 +382,7 @@ form {
   font-size: 20px;
 }
 
-input {
+.sidebar input {
   background: none;
   border: 1px solid #8A8A8A;
   border-radius: 3px;

@@ -97,5 +97,18 @@ ApiUtil = {
         ApiActions.updateFeed(data.feed);
       }
     });
+  },
+
+  removeFeedFromCollection: function(feed, collection) {
+    $.ajax({
+      url: 'api/collectionings',
+      type: 'delete',
+      dataType: 'json',
+      data: {collectioning: {feed_id: feed.id, collection_id: collection.id}},
+      success: function(data) {
+        ApiActions.updateCollection(data.collection);
+        ApiActions.updateFeed(data.feed);
+      }
+    });
   }
 };

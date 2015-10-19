@@ -23,15 +23,25 @@ AddFeedForm = React.createClass({
     ApiUtil.addFeedToCollection(this.props.feed, collection);
   },
 
+  removeFromCollection: function(collection) {
+    ApiUtil.removeFeedFromCollection(this.props.feed, collection);
+  },
+
   render: function() {
     return (
       <div className="collection-select">
           { this.state.collections.map(function(collection){
-            imgClass = FeedStore.collectionTitles(this.props.feed).indexOf(collection.title) === -1 ? "hidden" : "check-icon";
+            if (FeedStore.collectionTitles(this.props.feed).indexOf(collection.title) === -1) {
+              imgClass = "hidden";
+              clickAction = this.addToCollection.bind(this, collection);
+            } else {
+              imgClass = "check-icon";
+              clickAction = this.removeFromCollection.bind(this, collection);
+            }
             return(
               <div className="collection-option"
                    key={collection.title}
-                   onClick={this.addToCollection.bind(this, collection)}>
+                   onClick={clickAction}>
                 {collection.title}
               <img className={imgClass} src="checkmark.png" />
               </div>
