@@ -18,6 +18,16 @@
       return _collections.slice();
     },
 
+    find: function(id) {
+      var found;
+      _collections.forEach(function(collection){
+        if (collection.id === parseInt(id)) {
+          found = collection;
+        }
+      });
+      return found;
+    },
+
     collectedFeeds: function() {
       var feeds = {};
       _collections.forEach(function(collection){

@@ -62,16 +62,14 @@ Sidebar = React.createClass({
               <Link to="/saved">Saved</Link>
             </ul>
             <ul className="category-nav">
-              <div className="category-li">
-                <FeedNavList feeds={this.state.feeds} title="All"/>
-              </div>
               {
                 this.state.collections.map(function(collec, i) {
                   return(
                     <div className="category-li" key={i}>
                     <FeedNavList key={collec.id}
                                  feeds={collec.feeds || []}
-                                 title={collec.title} />
+                                 title={collec.title}
+                                 id={collec.id}/>
                     </div>
                   );
                 })

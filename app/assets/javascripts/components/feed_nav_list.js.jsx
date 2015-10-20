@@ -12,13 +12,17 @@ FeedNavList = React.createClass({
     }
   },
 
+  collectionShow: function() {
+    this.history.pushState(null, "collections/" + this.props.id);
+  },
+
   render: function(){
       return (
         <div className="nav-menu feeds">
           <img className="icon"
                src={this.state.caret}
                onClick={this.toggleList}/>
-             <h5 onClick={this.toggleList}>{this.props.title}</h5>
+             <h5 onClick={this.collectionShow}>{this.props.title}</h5>
           <ul className={this.state.hidden}>
             {this.props.feeds.map(function(feed){
               return (
