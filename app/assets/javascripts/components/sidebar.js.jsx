@@ -5,7 +5,7 @@ Sidebar = React.createClass({
     return { feeds: CollectionStore.collectedFeeds(),
              collections: CollectionStore.all(),
              hidden: "hidden",
-             style: "sidebar compact",
+             style: "compact",
              expandIcon: "expand-icon"};
   },
 
@@ -34,13 +34,13 @@ Sidebar = React.createClass({
 
   showSidebar: function() {
     this.setState({ hidden: "unhidden",
-                    style: "sidebar full",
+                    style: "full",
                     expandIcon: "expand-icon hidden"});
   },
 
   hideSidebar: function() {
     this.setState({ hidden: "hidden",
-                    style: "sidebar compact",
+                    style: "compact",
                     expandIcon: "expand-icon"});
   },
   _showAllFeeds: function() {
@@ -48,7 +48,7 @@ Sidebar = React.createClass({
   },
   render: function(){
     return (
-      <div className={this.state.style}
+      <div className={"sidebar " + this.state.style}
            onMouseEnter={this.showSidebar}
            onMouseLeave={this.hideSidebar}>
         <div className={this.state.expandIcon}>

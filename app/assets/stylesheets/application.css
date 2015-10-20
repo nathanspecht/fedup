@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 30px;
+  margin-top: 24px;
   font-weight: 600;
   font-size: 14px;
 }
@@ -236,7 +236,7 @@ img {
   margin: auto;
   margin-top: 10px;
   display: block;
-  margin-bottom: 25%;
+  margin-bottom: 10%;
 }
 
 .button:hover {
@@ -504,7 +504,7 @@ form {
   clear: both;
   border: 1px solid #BBBBBB;
   margin: auto;
-  margin-top: 63px;
+  margin-top: 53px;
   height: 230px;
   box-shadow: 2px 2px 2px gainsboro;
 }
@@ -555,4 +555,16 @@ form {
 .feed-thumb .collection-option {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.feed-thumb .h3 {
+  margin: 0px;
+}
+
+.modal-background {
+  position: fixed;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
