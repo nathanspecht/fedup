@@ -30,19 +30,23 @@ FeedThumb = React.createClass({
   },
 
   _linkToArticle: function() {
+    this.history.pushState(null, "articles/" + this.props.feed.id + "/" + this.state.firstArticle.title);
+  },
 
+  _linkToFeed: function() {
+    this.history.pushState(null, "feeds/" + this.props.feed.id);
   },
 
   render: function() {
     return(
       <div className="feed-thumb">
         <div className="square"></div>
-        <h2>{this.props.feed.title}</h2>
+        <h2 onClick={this._linkToFeed}>{this.props.feed.title}</h2>
         <AddToCollectionButton feed={this.props.feed}/>
-        <div className="thumb-image-snippet">
+        <div className="thumb-image-snippet"
+             onClick={this._linkToArticle}>
           <div ref="thumbImage" className="thumb-image"></div>
-          <div className="feed-preview-snippet"
-               onClick={this._linkToArticle}>
+          <div className="feed-preview-snippet">
             <p>
               {this.state.firstArticle.contentSnippet}
             </p>

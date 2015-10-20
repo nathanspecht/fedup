@@ -33,7 +33,7 @@ Sidebar = React.createClass({
   },
 
   showSidebar: function() {
-    this.setState({ hidden: "sidebar-content",
+    this.setState({ hidden: "sidebar-content unhidden",
                     style: "sidebar full",
                     expandIcon: "expand-icon hidden"});
   },

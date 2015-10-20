@@ -138,6 +138,7 @@ img {
   clear: both;
   position: fixed;
   transition: width 0.5s;
+  overflow-x: hidden;
 }
 
 .compact {
@@ -289,6 +290,11 @@ img {
 
 .hidden {
   display: none;
+  /*visibility: hidden;*/
+}
+
+.unhidden {
+  visibility: visible;
 }
 
 .expand-icon {
@@ -402,7 +408,8 @@ form {
 }
 
 .sidebar-content {
-
+  /*transition: visibility 0s;
+  transition-delay: 0.2s;*/
 }
 
 .add-to-collection-button {
