@@ -11,7 +11,7 @@ ArticleShow = React.createClass({
   },
 
   _updateArticle: function() {
-    this.setState({ article: ArticleStore.find(this.props.params.title) });
+    this.setState({ article: ArticleStore.find(this.props.params.title) || {}});
     this._fillContent();
   },
 
@@ -36,7 +36,7 @@ ArticleShow = React.createClass({
       <div className="article-show">
         <h1>{this.state.article.title}</h1>
         <SaveArticleButton article={this.state.article} />
-        <div ref="articleContent"></div>
+        <div ref="articleContent" className="article-content"></div>
       </div>
     );
   }

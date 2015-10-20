@@ -69,6 +69,8 @@ ApiUtil = {
 
   fetchArticles: function(feed) {
     var rssfeed = new google.feeds.Feed(feed.url);
+    rssfeed.includeHistoricalEntries();
+    rssfeed.setNumEntries(10);
     rssfeed.load(function(result){
       ApiActions.receiveArticles(result.feed.entries, feed);
     });

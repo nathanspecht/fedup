@@ -1,19 +1,19 @@
 FeedIndex = React.createClass({
 
   getInitialState: function() {
-    return { feeds: FeedStore.all() };
+    return { feeds: CollectionStore.collectedFeeds() };
   },
 
-  _feedChange: function() {
-    this.setState({ feeds: FeedStore.all() });
+  _collectionChange: function() {
+    this.setState({ feeds: CollectionStore.collectedFeeds() });
   },
 
   componentDidMount: function() {
-    FeedStore.addChangeListener(this._feedChange);
+    CollectionStore.addChangeListener(this._collectionChange);
   },
 
   componenetWillUnmount: function() {
-    FeedStore.removeChangeListener(this._feedChange);
+    CollectionStore.removeChangeListener(this._collectionChange);
   },
 
   render: function() {
@@ -22,7 +22,7 @@ FeedIndex = React.createClass({
         <h1>Today</h1>
         <div className="tagline">The most recent stories in your fedup today</div>
         { this.state.feeds.map(function(feed){
-            return <FeedThumb key={feed.id} feed={feed} />;
+            return <FeedPreview key={feed.id} feed={feed} />;
         })
       }</div>
     );

@@ -26,6 +26,12 @@ h1 {
   font-weight: 700;
 }
 
+h2 {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
 h4 {
   margin-bottom: 4px;
   font-size: 14px;
@@ -145,21 +151,23 @@ img {
 .nav-menu {
   font-size: 13px;
   font-weight: lighter;
-  position: absolute;
+  position: relative;
   color: #8A8A8A;
-  top: 5%;
   left: 20%;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .nav-menu.feeds {
   position: relative;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .category-nav {
-  position: absolute;
   top: 16%;
   width: 100%;
-  height: 50%;
+  max-height: 400px;
   overflow: scroll;
 }
 
@@ -217,10 +225,12 @@ img {
   border: 1px solid #8A8A8A;
   background: none;
   color: #969696;
-  width: 123px;
+  width: 174px;
   height: 29px;
-  position: absolute;
-  left: 20%;
+  margin: auto;
+  margin-top: 10px;
+  display: block;
+  margin-bottom: 40px;
 }
 
 .button:hover {
@@ -273,7 +283,6 @@ img {
 }
 
 .username {
-  margin-bottom: 8px;
   width: 100%;
   text-align: center;
 }
@@ -318,25 +327,16 @@ img {
 }
 
 .category-options{
-  position: absolute;
-  top: 67%;
   height: 29px;
   width: 100%;
   clear: both;
-  display: block;
+  display: inline;
 }
 
 .submit-button{
   margin-top: 10px;
   width: 100%;
   left: 0%;
-}
-
-.form {
-  position: relative;
-  left: 16px;
-  width: 130px;
-  top: -10px;
 }
 
 form {
@@ -355,6 +355,7 @@ form {
   overflow: scroll;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+  box-shadow: 3px 5px 6px;
 }
 
 .collection-select-background {
@@ -387,10 +388,21 @@ form {
   border: 1px solid #8A8A8A;
   border-radius: 3px;
   height: 25px;
-  width: 119px;
-  position: absolute;
-  left: 20%;
-  top: 0%;
+  width: 174px;
+  margin: auto;
+  margin-top: 10px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sidebar .tagline {
+  width: 174px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.sidebar-content {
+
 }
 
 .add-to-collection-button {
@@ -436,4 +448,103 @@ form {
 
 .feed-heading h1 {
   width: 223px;
+}
+
+.feed-thumb {
+  width: 250px;
+  height: 350px;
+  border: 1px solid #C3C3C3;
+  border-radius: 3px;
+  float: left;
+  margin: 50px;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+.square {
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 20px;
+  float: left;
+}
+
+.feed-thumb .thumb-image {
+  display: block;
+  border: none;
+  border-radius: 0px;
+  width: 100%;
+  height: 126px;
+}
+
+.feed-preview-snippet {
+  font-size: 12px;
+  display: inline;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.feed-preview-snippet p {
+  padding: 10px;
+  clear: both;
+}
+
+.thumb-image-snippet {
+  display: block;
+  width: 237px;
+  clear: both;
+  border: 1px solid #BBBBBB;
+  margin: auto;
+  margin-top: 85px;
+  height: 210px;
+  box-shadow: 2px 2px 2px gainsboro;
+}
+
+.thumb-image-snippet:hover {
+  border: 1px solid #737373;
+}
+
+.feed-thumb .add-to-collection-button {
+  width: 237px;
+  position: relative;
+  top: 0%;
+  right: 5px;
+  height: 19px;
+  border: 1px solid #D2D2D2;
+  border-radius: 3px;
+  font-size: 13px;
+  float: right;
+  color: #9A9A9A;
+}
+
+.feed-thumb .add-to-collection-button > span {
+  position: relative;
+  top: 3px;
+  left: 70px;
+  margin-bottom: 0px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.feed-thumb .collection-select {
+  position: relative;
+  right: 1px;
+  top: 6px;
+  max-height: 300px;
+  width: 237px;
+  background-color: white;
+  border: solid #D0D0D0 1px;
+  border-top: none;
+  overflow: scroll;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 3px 5px 6px;
+  z-index: 2;
+}
+
+.feed-thumb .collection-option {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

@@ -18,6 +18,16 @@
       return _collections.slice();
     },
 
+    collectedFeeds: function() {
+      var feeds = {};
+      _collections.forEach(function(collection){
+        collection.feeds.forEach(function(feed){
+          feeds[feed.url] = feed;
+        });
+      });
+      return Object.keys(feeds).map(function(url){return feeds[url];});
+    },
+
     feedUrls: function(collection) {
       return collection.feeds.map(function(feed){
         return feed.url;

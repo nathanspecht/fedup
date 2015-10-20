@@ -32,7 +32,7 @@ NewCollectionForm = React.createClass({
           <button className="hidden"
                   onClick={this._addCollection}>Create</button>
         </form>
-        <div className="hidden">
+        <div className="tagline">
           Press enter to add or escape to cancel.
         </div>
       </div>

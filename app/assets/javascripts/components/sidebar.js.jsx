@@ -2,7 +2,7 @@ Sidebar = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function() {
-    return { feeds: FeedStore.all(),
+    return { feeds: CollectionStore.collectedFeeds(),
              collections: CollectionStore.all(),
              hidden: "hidden",
              style: "sidebar compact",
@@ -10,11 +10,12 @@ Sidebar = React.createClass({
   },
 
   _feedChange: function() {
-    this.setState({feeds: FeedStore.all()});
+    this.setState({feeds: CollectionStore.collectedFeeds()});
   },
 
   _collectionChange: function() {
-    this.setState({collections: CollectionStore.all()});
+    this.setState({collections: CollectionStore.all(),
+                   feeds: CollectionStore.collectedFeeds()});
   },
 
   componentDidMount: function() {
@@ -32,17 +33,19 @@ Sidebar = React.createClass({
   },
 
   showSidebar: function() {
-    this.setState({ hidden: "",
+    this.setState({ hidden: "sidebar-content",
                     style: "sidebar full",
                     expandIcon: "expand-icon hidden"});
   },
 
   hideSidebar: function() {
-    this.setState({ hidden: "hidden",
+    this.setState({ hidden: "sidebar-content hidden",
                     style: "sidebar compact",
                     expandIcon: "expand-icon"});
   },
-
+  _showAllFeeds: function() {
+    this.history.pushState(null, '/all_feeds');
+  },
   render: function(){
     return (
       <div className={this.state.style}
@@ -55,8 +58,8 @@ Sidebar = React.createClass({
         </div>
         <div className={this.state.hidden}>
             <ul className="nav-menu">
-              <Link to="/">Today</Link>
-              <Link to="/saved">Saved For Later</Link>
+              <Link to="/">Most Recent</Link>
+              <Link to="/saved">Saved</Link>
             </ul>
             <ul className="category-nav">
               <div className="category-li">
@@ -75,6 +78,10 @@ Sidebar = React.createClass({
               }
             </ul>
             <CategoryOptions />
+            <button className="button"
+                    onClick={this._showAllFeeds}>
+                    Add Content
+            </button>
             <div className="user-options">
               <div className="username">{window.CURRENT_USER.username}</div>
               <button className="button"

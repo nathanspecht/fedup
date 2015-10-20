@@ -2,41 +2,52 @@ FeedThumb = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function(){
-    return { articles: ArticleStore.findByFeed(this.props.feed) };
+    return { firstArticle: {} };
   },
 
   _articlesUpdated: function() {
-    this.setState({articles: ArticleStore.findByFeed(this.props.feed)});
+    var firstArticle = ArticleStore.findByFeed(this.props.feed)[0] || {};
+    this.setState({firstArticle: firstArticle});
+    this.addImage();
   },
 
   componentDidMount: function(){
     ArticleStore.addChangeListener(this._articlesUpdated);
     ApiUtil.fetchArticles(this.props.feed);
+    this.addImage();
   },
 
   componentWillUnmount: function(){
     ArticleStore.removeChangeListener(this._articlesUpdated);
   },
 
-  showFeed: function() {
-    var feedUrl = "feeds/" + this.props.feed.id;
-    this.history.pushState(null, feedUrl);
+  addImage: function() {
+    var imageDiv = React.findDOMNode(this.refs.thumbImage);
+    var imageSrc = $(this.state.firstArticle.content).find('img').eq(0).attr('src');
+    if (imageSrc) {
+      imageDiv.style.backgroundImage = "url(" + imageSrc + ")";
+    }
   },
 
-  render: function () {
-    return (
-      <div className="feed-preview">
-        <div className="h3">
-          <span>MOST RECENT FROM </span>
-          <span className="feed-link" onClick={this.showFeed}>
-            {this.props.feed.title.toUpperCase()}
-          </span>
+  _linkToArticle: function() {
+
+  },
+
+  render: function() {
+    return(
+      <div className="feed-thumb">
+        <div className="square"></div>
+        <h2>{this.props.feed.title}</h2>
+        <AddToCollectionButton feed={this.props.feed}/>
+        <div className="thumb-image-snippet">
+          <div ref="thumbImage" className="thumb-image"></div>
+          <div className="feed-preview-snippet"
+               onClick={this._linkToArticle}>
+            <p>
+              {this.state.firstArticle.contentSnippet}
+            </p>
+          </div>
         </div>
-        {
-          this.state.articles.slice(0, 2).map(function(article){
-            return <ArticleThumb key={article.link} article={article} />;
-          })
-        }
       </div>
     );
   }
