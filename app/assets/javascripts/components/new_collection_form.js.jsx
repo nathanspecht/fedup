@@ -20,10 +20,14 @@ NewCollectionForm = React.createClass({
     }
   },
 
+  prevent: function (e) {
+    e.preventDefault();
+  },
+
   render: function() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.prevent}>
           <label>
             <input type="text"
                    valueLink={this.linkState('title')}

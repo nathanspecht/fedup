@@ -33,13 +33,13 @@ Sidebar = React.createClass({
   },
 
   showSidebar: function() {
-    this.setState({ hidden: "sidebar-content unhidden",
+    this.setState({ hidden: "unhidden",
                     style: "sidebar full",
                     expandIcon: "expand-icon hidden"});
   },
 
   hideSidebar: function() {
-    this.setState({ hidden: "sidebar-content hidden",
+    this.setState({ hidden: "hidden",
                     style: "sidebar compact",
                     expandIcon: "expand-icon"});
   },
@@ -56,7 +56,7 @@ Sidebar = React.createClass({
           <div className="expand-bar"></div>
           <div className="expand-bar"></div>
         </div>
-        <div className={this.state.hidden}>
+        <div className={"sidebar-content " + this.state.hidden}>
             <ul className="nav-menu">
               <Link to="/">Most Recent</Link>
               <Link to="/saved">Saved</Link>
@@ -82,11 +82,11 @@ Sidebar = React.createClass({
                     onClick={this._showAllFeeds}>
                     Add Content
             </button>
-            <div className="user-options">
-              <div className="username">{window.CURRENT_USER.username}</div>
-              <button className="button"
-                      onClick={this.logoutUser}>Logout</button>
-            </div>
+          </div>
+          <div className={"user-options " + this.state.hidden}>
+            <div className="username">{window.CURRENT_USER.username}</div>
+            <button className="button"
+                    onClick={this.logoutUser}>Logout</button>
           </div>
       </div>
     );
