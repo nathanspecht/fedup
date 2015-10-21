@@ -75,3 +75,11 @@
   right: 31px;
   font-weight: 700;
 }
+
+.splash .warning {
+  color: red;
+  font-family: fantasy;
+  animation: marquee 10s;
+  background-color: yellow;
+  width: 610px;
+}
