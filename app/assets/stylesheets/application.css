@@ -70,13 +70,11 @@ h3 {
 }
 
 .page {
-  margin-left: 100px;
   font-family: helvetica;
   height: 100%;
   overflow: scroll;
   display: inline-block;
-  width: 1010px;
-  display: inline-block;
+  width: 80%;
   margin: auto;
   margin-left: 50px;
 }
@@ -175,7 +173,7 @@ img {
 
 .full {
   overflow-x: hidden;
-  width: 210px;
+  width: 15%;
 }
 
 .nav-menu {
@@ -252,7 +250,7 @@ img {
   border: 1px solid #8A8A8A;
   background: none;
   color: #969696;
-  width: 174px;
+  width: 80%;
   height: 29px;
   margin: auto;
   margin-top: 10px;
@@ -300,9 +298,8 @@ img {
 }
 
 .user-options {
-  position: fixed;
+  position: absolute;
   top: 90%;
-  right: 41%;
   font-size: 13px;
   font-weight: lighter;
   color: #8A8A8A;

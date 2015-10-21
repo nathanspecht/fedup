@@ -4,10 +4,12 @@ var IndexRoute = ReactRouter.IndexRoute;
 window.Link = ReactRouter.Link;
 
 var App = React.createClass({
+
   componentDidMount: function() {
     ApiUtil.fetchFeeds();
     ApiUtil.fetchSavedArticles();
     ApiUtil.fetchCollections();
+    this.setState( function() { window.scrollTo(0, 0); } );
   },
 
   render: function() {

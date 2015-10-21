@@ -80,11 +80,11 @@ Sidebar = React.createClass({
                     onClick={this._showAllFeeds}>
                     Add Content
             </button>
-          </div>
           <div className={"user-options " + this.state.hidden}>
             <div className="username">{window.CURRENT_USER.username}</div>
             <button className="button"
                     onClick={this.logoutUser}>Logout</button>
+          </div>
           </div>
       </div>
     );
