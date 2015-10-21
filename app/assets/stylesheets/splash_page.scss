@@ -82,4 +82,11 @@
   animation: marquee 10s;
   background-color: yellow;
   width: 610px;
+  position: fixed;
+  top: 30px;
+  left: 208px;
+}
+
+.warning h2 {
+  text-align: right;
 }
