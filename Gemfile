@@ -38,7 +38,7 @@ group :development, :test do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
-
+  gem 'seed_dump', '~> 3.2', '>= 3.2.2'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

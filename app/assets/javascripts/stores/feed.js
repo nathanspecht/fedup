@@ -41,6 +41,18 @@
       });
     },
 
+    topics: function() {
+      var topics = {};
+      _feeds.forEach(function(feed){
+        if (topics[feed.topic]) {
+          topics[feed.topic].push(feed);
+        } else {
+          topics[feed.topic] = [feed];
+        }
+      });
+      return topics;
+    },
+
     addChangeListener: function(callback) {
       this.on(CHANGED_FEEDS, callback);
     },

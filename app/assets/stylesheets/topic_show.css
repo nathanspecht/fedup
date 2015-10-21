@@ -1,0 +1,10 @@
+.topic-show:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.topic-show > h2 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
