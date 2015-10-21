@@ -12,7 +12,7 @@ var App = React.createClass({
 
   render: function() {
     return (
-    <div>
+    <div className="app">
       <Sidebar />
       <div className="page">
         { this.props.children }

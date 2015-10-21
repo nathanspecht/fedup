@@ -15,7 +15,19 @@
  */
 
 #content {
+  position: absolute;
   font-family: helvetica;
+  height: 100%;
+  width: 110%;
+  overflow: hidden;
+}
+
+.app {
+  height: 100%;
+}
+
+p {
+  line-height: 30px;
 }
 
 h1 {
@@ -58,8 +70,15 @@ h3 {
 }
 
 .page {
-  margin-left: 270px;
+  margin-left: 100px;
   font-family: helvetica;
+  height: 100%;
+  overflow: scroll;
+  display: inline-block;
+  width: 1010px;
+  display: inline-block;
+  margin: auto;
+  margin-left: 50px;
 }
 
 .thumb-image {
@@ -136,9 +155,11 @@ img {
   background-color: #F7F7F7;
   height: 100%;
   clear: both;
-  position: fixed;
+  position: relative;
   transition: width 0.5s;
   overflow-x: hidden;
+  display: inline-block;
+  margin: 0px;
 }
 
 .sidebar-content {
@@ -244,13 +265,12 @@ img {
 }
 
 .article-show .save-button {
-  position: absolute;
-  top: 103px;
-  left: 270px;
+  top: 0px;
+  left: 0px;
 }
 
 .article-show h1 {
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
 .save-button {
@@ -483,7 +503,11 @@ form {
   border: none;
   border-radius: 0px;
   width: 100%;
-  height: 159px;
+  height: 142px;
+}
+
+.feed-thumb p {
+  line-height: 17px;
 }
 
 .feed-preview-snippet {

@@ -5,6 +5,10 @@
 }
 
 .topic-show > h2 {
-  font-size: 60px;
+  font-size: 20px;
   margin-bottom: 10px;
+}
+
+.topic-show .feed-thumbs{
+
 }
