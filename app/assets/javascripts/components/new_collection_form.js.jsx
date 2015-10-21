@@ -7,7 +7,8 @@ NewCollectionForm = React.createClass({
     return { title: "" };
   },
 
-  _addCollection: function() {
+  _addCollection: function(e) {
+    e.preventDefault();
     ApiUtil.saveCollection(this.state);
     this.props._showButton();
     this.setState({title: ""});
@@ -20,25 +21,21 @@ NewCollectionForm = React.createClass({
     }
   },
 
-  prevent: function (e) {
-    e.preventDefault();
+  componentDidUpdate: function() {
+    var textInput = React.findDOMNode(this.refs.textInput);
+    textInput.focus();
   },
 
   render: function() {
     return (
-      <div>
-        <form onSubmit={this.prevent}>
-          <label>
-            <input type="text"
-                   valueLink={this.linkState('title')}
-                   onKeyDown={this._handleKeyDown} />
-          </label>
-          <button className="hidden"
-                  onClick={this._addCollection}>Create</button>
+      <div className={this.props.hidden}>
+        <form onSubmit={this._addCollection}>
+          <input type="text"
+                 valueLink={this.linkState('title')}
+                 onKeyDown={this._handleKeyDown}
+                 onMouseLeave={this.props._showButton}
+                 ref="textInput" />
         </form>
-        <div className="tagline">
-          Press enter to add or escape to cancel.
-        </div>
       </div>
     );
   }

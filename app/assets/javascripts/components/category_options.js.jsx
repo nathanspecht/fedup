@@ -1,12 +1,12 @@
 CategoryOptions = React.createClass ({
   getInitialState: function() {
-    return {formDisplay: "hidden", buttonDisplay: "button"};
+    return {hidden: "hidden", buttonDisplay: "button"};
   },
   _showForm: function() {
-    this.setState({formDisplay: "form", buttonDisplay: "hidden"});
+    this.setState({hidden: "", buttonDisplay: "hidden"});
   },
   _showButton: function() {
-    this.setState({formDisplay: "hidden", buttonDisplay: "button"});
+    this.setState({hidden: "hidden", buttonDisplay: "button"});
   },
   render: function() {
     return (
@@ -15,9 +15,7 @@ CategoryOptions = React.createClass ({
                 onClick={this._showForm}>
                 New Collection
         </button>
-        <div className={this.state.formDisplay}>
-          <NewCollectionForm _showButton={this._showButton}/>  
-        </div>
+        <NewCollectionForm _showButton={this._showButton} hidden={this.state.hidden}/>
       </div>
     );
   }
