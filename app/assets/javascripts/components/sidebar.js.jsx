@@ -44,6 +44,7 @@ Sidebar = React.createClass({
                     expandIcon: "expand-icon"});
   },
   _showAllFeeds: function() {
+    this.hideSidebar();
     this.history.pushState(null, '/all_feeds');
   },
   render: function(){
@@ -58,8 +59,8 @@ Sidebar = React.createClass({
         </div>
         <div className={"sidebar-content " + this.state.hidden}>
             <ul className="nav-menu">
-              <Link to="/">Most Recent</Link>
-              <Link to="/saved">Saved</Link>
+              <Link to="/" onClick={this.hideSidebar}>Most Recent</Link>
+              <Link to="/saved" onClick={this.hideSidebar}>Saved</Link>
             </ul>
             <ul className="category-nav">
               {
@@ -69,10 +70,11 @@ Sidebar = React.createClass({
                     <FeedNavList key={collec.id}
                                  feeds={collec.feeds || []}
                                  title={collec.title}
-                                 id={collec.id}/>
+                                 id={collec.id}
+                                 hideSidebar = {this.hideSidebar}/>
                     </div>
                   );
-                })
+                }.bind(this))
               }
             </ul>
             <CategoryOptions />

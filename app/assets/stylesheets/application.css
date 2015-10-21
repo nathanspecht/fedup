@@ -417,7 +417,7 @@ form {
   border: 1px solid #8A8A8A;
   border-radius: 3px;
   height: 25px;
-  width: 174px;
+  width: 80%;
   margin: auto;
   margin-top: 10px;
   display: block;
@@ -425,7 +425,7 @@ form {
 }
 
 .sidebar .tagline {
-  width: 174px;
+  width: 80%;
   margin: auto;
   margin-bottom: 30px;
 }
