@@ -23,8 +23,8 @@ FeedThumb = React.createClass({
 
   addImage: function() {
     var imageDiv = React.findDOMNode(this.refs.thumbImage);
-    var imageSrc = $(this.state.firstArticle.content).find('img').eq(0).attr('src') ||
-                   $(this.state.firstArticle.content).filter('img').eq(0).attr('src');
+    var imageSrc = $("<div>" + this.state.firstArticle.content + "</div>").find('img').eq(0).attr('src') ||
+                   $("<div>" + this.state.firstArticle.content + "</div>").filter('img').eq(0).attr('src');
     if (imageSrc) {
       imageDiv.style.backgroundImage = "url(" + imageSrc + ")";
     }
@@ -42,7 +42,7 @@ FeedThumb = React.createClass({
     return(
       <div className="feed-thumb">
         <div className="square"></div>
-        <h2 onClick={this._linkToFeed}>{this.props.feed.title}</h2>
+        <h2 onClick={this._linkToFeed}>{ApiUtil.stripHTML(this.props.feed.title)}</h2>
         <h3 className="h3">#{this.props.feed.topic}</h3>
         <AddToCollectionButton feed={this.props.feed}/>
         <div className="thumb-image-snippet"

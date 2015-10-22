@@ -43,3 +43,31 @@
 .search-area .hidden {
   display: none;
 }
+
+li.search-result-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #EFEFEF;
+}
+
+li.search-result-item:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+span.title {
+  font-weight: 900;
+  padding-right: 10px;
+  font-size: 13px;
+  display: block;
+  padding-bottom: 5px;
+}
+
+span.description {
+  color: #A7A7A7;
+}
+
+ul.search-result-list {
+  font-size: 12px;
+  width: 850px;
+}

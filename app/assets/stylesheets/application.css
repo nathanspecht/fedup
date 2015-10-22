@@ -402,12 +402,13 @@ form {
 .collection-option {
   width: 100%;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #D6D6D6;
 }
 
 .collection-option:hover {
-  background-color: rgb(208, 255, 214);
+  background-color: rgb(247, 247, 247);
   border-radius: 4px;
 }
 
@@ -463,7 +464,7 @@ form {
   border-radius: 3px;
   font-size: 13px;
   transition: color 1s, opacity 1s;
-  color: #9A9A9A;
+  color: #5D5D5D;
   margin-bottom: 30px;
 }
 

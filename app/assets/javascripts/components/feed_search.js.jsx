@@ -1,7 +1,8 @@
 LinkedStateMixin = React.addons.LinkedStateMixin;
 
 FeedSearch = React.createClass({
-  mixins: [LinkedStateMixin],
+  mixins: [LinkedStateMixin, ReactRouter.History],
+  
   getInitialState: function() {
     return {search: '', results: []};
   },
@@ -27,6 +28,7 @@ FeedSearch = React.createClass({
     e.preventDefault();
     ApiUtil.searchFeeds(this.state.search);
     this.setState({hidden: ""});
+    this.history.pushState(null, "search");
   },
 
   hideDropdown: function() {
@@ -42,13 +44,6 @@ FeedSearch = React.createClass({
                  valueLink={this.linkState('search')}
                  onBlur={this.hideDropdown} />
         </form>
-        <ul className={"search-results " + this.state.hidden}>
-        {
-            this.state.results.map(function(result, idx){
-            return <li key={result.title + idx}>{ApiUtil.stripHTML(result.title)}</li>;
-          }.bind(this))
-        }
-        </ul>
       </div>
     );
   }

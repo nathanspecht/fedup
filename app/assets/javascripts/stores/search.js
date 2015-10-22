@@ -11,7 +11,11 @@
 
   root.SearchStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
-      return _foundFeeds.slice();
+      if (_foundFeeds[0]){
+        return _foundFeeds.slice();
+      } else {
+        return [];
+      }
     },
 
     addChangeListener: function(callback) {

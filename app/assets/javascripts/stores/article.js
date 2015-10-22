@@ -9,6 +9,7 @@
     var articles = articleData.articles;
     articles.forEach(function(article){
       article.feed_id = feed.id;
+      article.feed_title = feed.title;
       _articles[article.link] = article;
     });
   };
@@ -55,7 +56,7 @@
     findByFeed: function(feed) {
       var foundArticles = [];
       this.all().forEach(function(article){
-        if (article.feed_id === feed.id) {
+        if (article.feed_title === feed.title) {
           foundArticles.push(article);
         }
       });

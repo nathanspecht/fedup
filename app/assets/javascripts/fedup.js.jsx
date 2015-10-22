@@ -32,6 +32,7 @@ var routes = (
     <Route path="articles/:feed_id/:title" component={ArticleShow} />
     <Route path="all_feeds" component={AllFeeds} />
     <Route path="collections/:id" component={CollectionShow} />
+    <Route path="search" component={SearchResultShow} />
   </Route>
 );
 
