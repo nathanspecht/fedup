@@ -2,10 +2,11 @@
 #
 # Table name: feeds
 #
-#  id    :integer          not null, primary key
-#  title :string           not null
-#  url   :string           not null
-#  topic :string           not null
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  url         :string           not null
+#  topic       :string           not null
+#  description :text
 #
 
 class Feed < ActiveRecord::Base

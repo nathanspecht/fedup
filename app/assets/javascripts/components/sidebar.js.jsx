@@ -80,7 +80,7 @@ Sidebar = React.createClass({
             <CategoryOptions />
             <button className="button"
                     onClick={this._showAllFeeds}>
-                    Add Content
+                    Add to Collections
             </button>
           <div className={"user-options " + this.state.hidden}>
             <div className="username">{window.CURRENT_USER.username}</div>

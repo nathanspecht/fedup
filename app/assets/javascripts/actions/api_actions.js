@@ -40,5 +40,17 @@ ApiActions = {
       actionType: FeedConstants.FEED_UPDATED,
       feed: feed
     });
+  },
+  selectTopic: function(topic){
+    AppDispatcher.dispatch({
+      actionType: FeedConstants.TOPIC_SELECTED,
+      topic: topic
+    });
+  },
+  deselectTopic: function(topic){
+    AppDispatcher.dispatch({
+      actionType: FeedConstants.TOPIC_DESELECTED,
+      topic: topic
+    });
   }
 };

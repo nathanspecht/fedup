@@ -1,6 +1,7 @@
 (function(root) {
   'use strict';
   var _feeds = [];
+  var _selectedTopics = [];
   var CHANGED_FEEDS = "change feeds";
 
   var resetFeeds = function(feeds) {
@@ -10,6 +11,15 @@
   var updateFeed = function(feed) {
     var idx = FeedStore.ids().indexOf(feed.id);
     _feeds[idx] = feed;
+  };
+
+  var selectTopic = function(topicName) {
+    _selectedTopics.push(topicName);
+  };
+
+  var deselectTopic = function(topicName) {
+    var idx = _selectedTopics.indexOf(topicName);
+    _selectedTopics.splice(idx, 1);
   };
 
   root.FeedStore = $.extend({}, EventEmitter.prototype, {
@@ -41,7 +51,21 @@
       });
     },
 
-    topics: function() {
+    selectedTopics: function() {
+      var topics = {};
+      _feeds.forEach(function(feed){
+        if (this.isSelectedTopic(feed.topic) || _selectedTopics.length === 0){
+          if (topics[feed.topic]) {
+            topics[feed.topic].push(feed);
+          } else {
+            topics[feed.topic] = [feed];
+          }
+        }
+      }.bind(this));
+      return topics;
+    },
+
+    allTopics: function() {
       var topics = {};
       _feeds.forEach(function(feed){
         if (topics[feed.topic]) {
@@ -51,6 +75,10 @@
         }
       });
       return topics;
+    },
+
+    isSelectedTopic: function(topicName) {
+      return _selectedTopics.indexOf(topicName) !== -1;
     },
 
     addChangeListener: function(callback) {
@@ -70,6 +98,14 @@
       break;
     case FeedConstants.FEED_UPDATED:
       updateFeed(payload.feed);
+      FeedStore.emit(CHANGED_FEEDS);
+      break;
+    case FeedConstants.TOPIC_SELECTED:
+      selectTopic(payload.topic);
+      FeedStore.emit(CHANGED_FEEDS);
+      break;
+    case FeedConstants.TOPIC_DESELECTED:
+      deselectTopic(payload.topic);
       FeedStore.emit(CHANGED_FEEDS);
       break;
     }

@@ -1,9 +1,9 @@
 AllFeeds = React.createClass({
   getInitialState: function() {
-    return {topics: FeedStore.topics()};
+    return {topics: FeedStore.selectedTopics()};
   },
   updateFeeds: function() {
-    this.setState({topics: FeedStore.topics()});
+    this.setState({topics: FeedStore.selectedTopics()});
   },
   componentDidMount: function() {
     FeedStore.addChangeListener(this.updateFeeds);
@@ -13,9 +13,10 @@ AllFeeds = React.createClass({
   },
   render: function() {
     return (
-      <div className="feedIndex">
+      <div className="feed-index">
         <h1>Explore</h1>
         <div className="tagline">Available feeds to add to your collections</div>
+        <FeedFilter />
         {
           Object.keys(this.state.topics).map(function(topic){
             return <TopicShow key={topic} name={topic} feeds={this.state.topics[topic]} />;
