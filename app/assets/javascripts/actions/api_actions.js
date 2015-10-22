@@ -52,5 +52,11 @@ ApiActions = {
       actionType: FeedConstants.TOPIC_DESELECTED,
       topic: topic
     });
+  },
+  receiveFoundFeeds: function(result){
+    AppDispatcher.dispatch({
+      actionType: SearchConstants.SEARCH_MADE,
+      result: result
+    });
   }
 };

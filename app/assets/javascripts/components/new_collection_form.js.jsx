@@ -33,7 +33,7 @@ NewCollectionForm = React.createClass({
           <input type="text"
                  valueLink={this.linkState('title')}
                  onKeyDown={this._handleKeyDown}
-                 onMouseLeave={this.props._showButton}
+                 onBlur={this.props._showButton}
                  ref="textInput" />
         </form>
       </div>

@@ -14,6 +14,7 @@ AllFeeds = React.createClass({
   render: function() {
     return (
       <div className="feed-index">
+        <FeedSearch />
         <h1>Explore</h1>
         <div className="tagline">Available feeds to add to your collections</div>
         <FeedFilter />

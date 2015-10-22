@@ -76,6 +76,12 @@ ApiUtil = {
     });
   },
 
+  searchFeeds: function(search) {
+    google.feeds.findFeeds(search, function(result){
+      ApiActions.receiveFoundFeeds(result);
+    });
+  },
+
   saveCollection: function(collection) {
     $.ajax({
       url: 'api/collections',
@@ -112,5 +118,11 @@ ApiUtil = {
         ApiActions.updateFeed(data.feed);
       }
     });
+  },
+
+  stripHTML: function(html) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
   }
 };
