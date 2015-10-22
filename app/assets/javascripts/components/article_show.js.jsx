@@ -20,13 +20,15 @@ ArticleShow = React.createClass({
 
   render: function() {
     var title;
+    var saveButton;
     if (this.props.article) {
       title = this.props.article.title;
+      saveButton = <SaveArticleButton article={this.props.article} />;
     }
     return (
       <div className="article-show">
         <h1>{title}</h1>
-        <SaveArticleButton article={this.props.article} />
+        {saveButton}
         <div ref="articleContent" className="article-content"></div>
       </div>
     );
