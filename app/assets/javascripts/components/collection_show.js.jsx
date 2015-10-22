@@ -6,7 +6,10 @@ CollectionShow = React.createClass({
     if (collection) {
       feeds = collection.feeds;
     }
-    return { collection: collection || {}, feeds: feeds};
+    return { collection: collection || {},
+             feeds: feeds,
+             article: null,
+             articleHidden: "hidden"};
   },
 
   _collectionChange: function() {
@@ -29,6 +32,12 @@ CollectionShow = React.createClass({
     var collection = CollectionStore.find(newProps.params.id);
     this.setState({collection: collection, feeds: collection.feeds});
   },
+  showArticle: function(article) {
+    this.setState({articleHidden: "", article: article});
+  },
+  hideArticle: function() {
+    this.setState({articleHidden: "hidden"});
+  },
 
   render: function() {
     return (
@@ -36,9 +45,16 @@ CollectionShow = React.createClass({
         <h1>{this.state.collection.title}</h1>
         <div className="tagline">The most recent stories {this.state.collection.title}</div>
         { this.state.feeds.map(function(feed){
-            return <FeedPreview key={feed.id} feed={feed} />;
-        })
-      }</div>
+            return <FeedPreview key={feed.id} feed={feed} showArticle={this.showArticle}/>;
+        }.bind(this))
+        }
+        {
+          <div className={"article-mod " + this.state.articleHidden}
+               onClick={this.hideArticle}>
+            <ArticleShow article={this.state.article} />
+          </div>
+        }
+    </div>
     );
   }
 });

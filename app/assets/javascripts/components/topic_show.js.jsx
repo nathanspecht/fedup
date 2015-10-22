@@ -4,8 +4,10 @@ TopicShow = React.createClass({
         <div className="feed-thumbs">
           {
               this.props.feeds.map(function(feed){
-              return <FeedThumb key={feed.id} feed={feed} />;
-            })
+              return <FeedThumb key={feed.id}
+                                feed={feed}
+                                showArticle={this.props.showArticle} />;
+                            }.bind(this))
           }
         </div>
     );

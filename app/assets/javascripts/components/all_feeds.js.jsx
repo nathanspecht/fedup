@@ -1,6 +1,6 @@
 AllFeeds = React.createClass({
   getInitialState: function() {
-    return {topics: FeedStore.selectedTopics()};
+    return {topics: FeedStore.selectedTopics(), article: null, articleHidden: "hidden"};
   },
   updateFeeds: function() {
     this.setState({topics: FeedStore.selectedTopics()});
@@ -11,6 +11,12 @@ AllFeeds = React.createClass({
   componenetWillUnmount: function() {
     FeedStore.removeChangeListener(this.updateFeeds);
   },
+  showArticle: function(article) {
+    this.setState({articleHidden: "", article: article});
+  },
+  hideArticle: function() {
+    this.setState({articleHidden: "hidden"});
+  },
   render: function() {
     return (
       <div className="feed-index">
@@ -20,10 +26,19 @@ AllFeeds = React.createClass({
         <FeedFilter />
         {
           Object.keys(this.state.topics).map(function(topic){
-            return <TopicShow key={topic} name={topic} feeds={this.state.topics[topic]} />;
+            return <TopicShow key={topic}
+                              name={topic}
+                              feeds={this.state.topics[topic]}
+                              showArticle={this.showArticle} />;
           }.bind(this))
         }
-      </div>
+        {
+          <div className={"article-mod " + this.state.articleHidden}
+               onClick={this.hideArticle}>
+            <ArticleShow article={this.state.article} />
+          </div>
+        }
+    </div>
     );
   }
 });

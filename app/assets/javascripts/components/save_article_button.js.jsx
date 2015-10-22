@@ -1,6 +1,6 @@
 SaveArticleButton = React.createClass({
   getInitialState: function() {
-    if (ArticleStore.isSaved(this.props.article)) {
+    if (this.props.article && ArticleStore.isSaved(this.props.article)) {
       return { clicked: "unclicked", onClick: this.unSaveArticle, word: "unsave" };
     } else {
       return { clicked: "unclicked", onClick: this.saveArticle, word: "save" };

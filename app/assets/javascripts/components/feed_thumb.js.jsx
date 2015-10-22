@@ -46,7 +46,7 @@ FeedThumb = React.createClass({
         <h3 className="h3">#{this.props.feed.topic}</h3>
         <AddToCollectionButton feed={this.props.feed}/>
         <div className="thumb-image-snippet"
-             onClick={this._linkToArticle}>
+             onClick={this.props.showArticle.bind(null, this.state.firstArticle)}>
           <div ref="thumbImage" className="thumb-image"></div>
           <div className="feed-preview-snippet">
             <p>
