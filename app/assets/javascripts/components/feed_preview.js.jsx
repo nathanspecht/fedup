@@ -34,8 +34,10 @@ FeedPreview = React.createClass({
         </div>
         {
           this.state.articles.slice(0, 2).map(function(article){
-            return <ArticleThumb key={article.link} article={article} />;
-          })
+            return <ArticleThumb key={article.link}
+                                 article={article}
+                                 showArticle={this.props.showArticle} />;
+          }.bind(this))
         }
       </div>
     );

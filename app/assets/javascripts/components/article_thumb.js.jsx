@@ -17,10 +17,10 @@ ArticleThumb = React.createClass({
     this.addImage();
   },
 
-  showArticle: function() {
-    var articleUrl = "articles/" + this.props.article.feed_id + "/" + this.props.article.title;
-    this.history.pushState(null, articleUrl);
-  },
+  // showArticle: function() {
+  //   var articleUrl = "articles/" + this.props.article.feed_id + "/" + this.props.article.title;
+  //   this.history.pushState(null, articleUrl);
+  // },
 
   _showButtons: function() {
     this.setState({hidden: ""});
@@ -37,7 +37,7 @@ ArticleThumb = React.createClass({
            className="article-preview">
         <div ref="thumbImage" className="thumb-image"></div>
         <div className="thumb-text">
-          <h4 onClick={this.showArticle}>{this.props.article.title}</h4>
+          <h4 onClick={this.props.showArticle.bind(null, this.props.article)}>{this.props.article.title}</h4>
           <div className="snippet">{this.props.article.contentSnippet}</div>
           <div className={this.state.hidden}>
             <SaveArticleButton article={this.props.article} />

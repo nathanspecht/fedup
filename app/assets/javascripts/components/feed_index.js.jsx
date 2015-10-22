@@ -1,7 +1,7 @@
 FeedIndex = React.createClass({
 
   getInitialState: function() {
-    return { feeds: CollectionStore.collectedFeeds() };
+    return { feeds: CollectionStore.collectedFeeds(), articleHidden: "hidden", article: null };
   },
 
   _collectionChange: function() {
@@ -15,16 +15,30 @@ FeedIndex = React.createClass({
   componenetWillUnmount: function() {
     CollectionStore.removeChangeListener(this._collectionChange);
   },
-
+  showArticle: function(article) {
+    this.setState({articleHidden: "", article: article});
+  },
+  hideArticle: function() {
+    this.setState({articleHidden: "hidden"});
+  },
   render: function() {
     return (
       <div className="feedIndex">
         <h1>Today</h1>
         <div className="tagline">The most recent stories in your fedup today</div>
         { this.state.feeds.map(function(feed){
-            return <FeedPreview key={feed.id} feed={feed} />;
-        })
-      }</div>
+            return <FeedPreview key={feed.id}
+                                feed={feed}
+                                showArticle={this.showArticle} />;
+            }.bind(this))
+        }
+        {
+          <div className={"article-mod " + this.state.articleHidden}
+               onClick={this.hideArticle}>
+            <ArticleShow article={this.state.article} />
+          </div>
+        }
+      </div>
     );
   }
 });

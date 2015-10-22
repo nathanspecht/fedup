@@ -13,7 +13,7 @@ FeedThumb = React.createClass({
 
   componentDidMount: function(){
     ArticleStore.addChangeListener(this._articlesUpdated);
-    ApiUtil.fetchArticles(this.props.feed);
+    ApiUtil.fetchFirstArticle(this.props.feed);
     this.addImage();
   },
 

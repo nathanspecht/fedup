@@ -76,6 +76,14 @@ ApiUtil = {
     });
   },
 
+  fetchFirstArticle: function(feed) {
+    var rssfeed = new google.feeds.Feed(feed.url);
+    rssfeed.setNumEntries(1);
+    rssfeed.load(function(result){
+      ApiActions.receiveArticles(result.feed.entries, feed);
+    });
+  },
+
   searchFeeds: function(search) {
     google.feeds.findFeeds(search, function(result){
       ApiActions.receiveFoundFeeds(result);

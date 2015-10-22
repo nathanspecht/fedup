@@ -1,7 +1,10 @@
 FeedShow = React.createClass({
   getInitialState: function() {
     var feed = FeedStore.find(this.props.params.id) || {};
-    return {feed: feed, articles: ArticleStore.findByFeed(feed)};
+    return {feed: feed,
+            articles: ArticleStore.findByFeed(feed),
+            articleHidden: "hidden",
+            article: null};
   },
 
   _articlesUpdated: function() {
@@ -29,6 +32,12 @@ FeedShow = React.createClass({
     ApiUtil.fetchArticles(feed);
     this.setState({ feed: feed, articles: ArticleStore.findByFeed(feed) });
   },
+  showArticle: function(article) {
+    this.setState({articleHidden: "", article: article});
+  },
+  hideArticle: function() {
+    this.setState({articleHidden: "hidden"});
+  },
 
   render: function() {
     return (
@@ -42,10 +51,18 @@ FeedShow = React.createClass({
         {
           this.state.articles.map(function(article, i){
             console.log(article.link);
-            return <ArticleThumb key={article.link + i} article={article} />;
-          })
+            return <ArticleThumb key={article.link + i}
+                                 article={article}
+                                 showArticle={this.showArticle} />;
+           }.bind(this))
         }
         </div>
+        {
+          <div className={"article-mod " + this.state.articleHidden}
+               onClick={this.hideArticle}>
+            <ArticleShow article={this.state.article} />
+          </div>
+        }
       </div>
     );
   }
