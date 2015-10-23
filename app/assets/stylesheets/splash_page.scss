@@ -15,65 +15,73 @@
 .splash .welcome h1 {
   margin-bottom: 0px;
   margin-top: 0px;
-  padding-top: 20px;
+  padding-top: 35px;
+  padding-left: 117px;
   font-size: 40px;
   font-weight: 700;
 }
 
 .splash .tagline {
   color: rgba(255, 255, 255, 0.71);
-  position: relative;
-  top: 110px;
-  left: 74px;
   width: 500px;
 }
 
 .splash .tagline h2 {
-  margin-top: 24px;
   font-weight: 100;
+  margin-top: 10px;
+  margin-left: 120px;
   font-size: 21px;
   line-height: 35px;
   font-family: helvetica neue;
+  width: 100%;
 }
 
 .splash .sign-up {
   position: relative;
   height: 45px;
-  width: 200px;
+  width: 160px;
   background: #F7C700;
   color: white;
   border-radius: 4px;
   box-shadow: 2px 2px 0px rgba(8, 8, 8, 0.28);
-  top: 180px;
-  left: 76px;
+  top: 135px;
+  left: 184px;
+}
+
+.splash .sign-up:hover {
+  cursor: pointer;
 }
 
 .splash .sign-up h3 {
   color: white;
   font-weight: 900;
   position: absolute;
-  left: 56px;
+  left: 36px;
   top: 6px;
 }
 
 .splash .login {
   position: relative;
   height: 36px;
-  width: 100px;
+  width: 80px;
   border: 1px solid white;
   color: white;
   border-radius: 4px;
-  top: -160px;
-  left: 820px;
+  top: -32%;
+  left: 90%;
+}
+
+.splash .login:hover {
+  cursor: pointer;
 }
 
 .splash .login h3 {
-  color: white;
+  color: rgba(255, 255, 255, 0.84);
   font-size: 14px;
   position: absolute;
   top: 1px;
-  right: 31px;
-  font-weight: 700;
+  right: 22px;
+  font-weight: 100;
 }
 
 .splash .warning {

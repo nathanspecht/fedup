@@ -1,4 +1,5 @@
 class Api::CollectionsController < ApplicationController
+
   def create
     @collection = Collection.new(collection_params)
     @collection.user_id = current_user.id

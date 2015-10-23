@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :ensure_login, only: [:new, :create]
+
   def create
     user = User.find_by_credentials(
       params[:user][:username],
@@ -7,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user
       login(user)
-      redirect_to static_pages_url
+      redirect_to "/"
     else
       flash.now[:errors] = "Invalid Login."
       render :new

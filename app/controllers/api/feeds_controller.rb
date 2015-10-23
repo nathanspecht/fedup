@@ -1,4 +1,5 @@
 class Api::FeedsController < ApplicationController
+
   def create
   end
 

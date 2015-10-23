@@ -284,6 +284,7 @@ img {
 .article-show .save-button {
   top: 0px;
   left: 0px;
+  margin-bottom: 10px;
 }
 
 .article-show h1 {
@@ -455,7 +456,7 @@ form {
   width: 211px;
   position: absolute;
   top: 48%;
-  right: 60px;
+  right: 30%;
   display: inline-block;
   height: 19px;
   border: 1px solid #D2D2D2;
@@ -687,4 +688,5 @@ form {
 
 .article-content {
   line-height: 30px;
+  font-size: 15px;
 }

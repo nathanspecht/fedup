@@ -1,4 +1,5 @@
 class Api::SavesController < ApplicationController
+
   def destroy
     @save = Save.includes(:article).
             where({articles: {link: params[:article][:link]},

@@ -1,4 +1,5 @@
 class Api::ArticlesController < ApplicationController
+
   def create
     @article = Article.find_by_link(article_params[:link])
     if @article

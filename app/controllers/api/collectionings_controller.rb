@@ -1,4 +1,5 @@
 class Api::CollectioningsController < ApplicationController
+
   def create
     if !params[:collectioning][:feed][:id]
       feed = Feed.find_by_url(params[:collectioning][:feed][:url])
