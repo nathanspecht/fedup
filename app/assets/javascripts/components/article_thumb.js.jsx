@@ -18,11 +18,6 @@ ArticleThumb = React.createClass({
     this.addImage();
   },
 
-  // showArticle: function() {
-  //   var articleUrl = "articles/" + this.props.article.feed_id + "/" + this.props.article.title;
-  //   this.history.pushState(null, articleUrl);
-  // },
-
   _showButtons: function() {
     this.setState({hidden: ""});
   },

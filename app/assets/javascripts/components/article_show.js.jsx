@@ -12,16 +12,28 @@ ArticleShow = React.createClass({
 
   componentDidMount: function() {
     this._fillContent();
+    this.hideSmallImages();
   },
 
   componentDidUpdate: function() {
     this._fillContent();
+    this.hideSmallImages();
   },
 
   prevent: function(e) {
     e.stopPropagation();
   },
-  
+
+  hideSmallImages: function() {
+    var articleContent = React.findDOMNode(this.refs.articleContent);
+    var links = $(articleContent).find('a');
+    links.each(function(idx){
+      if (links.eq(idx)[0].rel === "nofollow") {
+        links.eq(idx).hide();
+      }
+    });
+  },
+
   render: function() {
     var title;
     var saveButton;

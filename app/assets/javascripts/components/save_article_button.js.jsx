@@ -15,13 +15,17 @@ SaveArticleButton = React.createClass({
     }
   },
 
+  _delayUpdateSave: function() {
+    window.setTimeout(this._updateSave, 1000);
+  },
+
   componentDidMount: function() {
     this._updateSave();
-    // ArticleStore.addChangeListener(this._updateSave);
+    ArticleStore.addChangeListener(this._delayUpdateSave);
   },
 
   componentWillUnmount: function() {
-    // ArticleStore.removeChangeListener(this._updateSave);
+    ArticleStore.removeChangeListener(this._delayUpdateSave);
   },
 
   unSaveArticle: function() {
