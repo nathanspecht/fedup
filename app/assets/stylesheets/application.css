@@ -416,16 +416,43 @@ form {
 }
 
 .collection-option {
+  position: relative;
+  height: 20px;
+}
+
+.collection-option span {
   width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top: 1px solid #D6D6D6;
 }
 
 .collection-option:hover {
   background-color: rgb(247, 247, 247);
   border-radius: 4px;
+}
+
+.collection-option input {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border: none;
+  color: #9A9A9A;
+  font-size: 13px;
+}
+
+.collection-option form {
+  margin-bottom: 0px;
+}
+
+.collection-option.no-hover:hover {
+  background-color: white;
+}
+
+.collection-option input:focus {
+  outline: none;
 }
 
 .collection-select h1 {
@@ -512,8 +539,9 @@ form {
   float: right;
   line-height: 0px;
   position: relative;
-  top: -1px;
+  top: 50%;
   right: 59px;
+  transform: translateY(-50%);
 }
 
 .feed-heading {

@@ -9,7 +9,11 @@ NewCollectionForm = React.createClass({
 
   _addCollection: function(e) {
     e.preventDefault();
-    ApiUtil.saveCollection(this.state);
+    if (this.props.feed) {
+      ApiUtil.saveCollectionAndFeed(this.state, this.props.feed);
+    } else {
+      ApiUtil.saveCollection(this.state);
+    }
     this.props._showButton();
     this.setState({title: ""});
   },
@@ -23,14 +27,18 @@ NewCollectionForm = React.createClass({
 
   componentDidUpdate: function() {
     var textInput = React.findDOMNode(this.refs.textInput);
-    textInput.focus();
+    if (this.props.focus) {
+      textInput.focus();
+    }
   },
 
   render: function() {
+    var placeholder = this.props.focus ? "" : "New Collection";
     return (
       <div className={this.props.hidden}>
         <form onSubmit={this._addCollection}>
           <input type="text"
+                 placeholder={placeholder}
                  valueLink={this.linkState('title')}
                  onKeyDown={this._handleKeyDown}
                  onBlur={this.props._showButton}

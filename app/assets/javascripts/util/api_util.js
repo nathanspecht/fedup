@@ -102,6 +102,19 @@ ApiUtil = {
     });
   },
 
+  saveCollectionAndFeed: function(collection, feed) {
+    $.ajax({
+      url: 'api/collections',
+      type: 'post',
+      dataType: 'json',
+      data: {collection: collection},
+      success: function(collection) {
+        ApiActions.receiveCollections([collection]);
+        ApiUtil.addFeedToCollection(feed, collection);
+      }
+    });
+  },
+
   addFeedToCollection: function(feed, collection) {
     feed.title = this.stripHTML(feed.title);
 

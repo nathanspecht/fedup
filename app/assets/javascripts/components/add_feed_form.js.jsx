@@ -27,6 +27,10 @@ AddFeedForm = React.createClass({
     ApiUtil.removeFeedFromCollection(this.props.feed, collection);
   },
 
+  _showButton: function() {
+
+  },
+
   render: function() {
     return (
       <div className="collection-select">
@@ -47,6 +51,11 @@ AddFeedForm = React.createClass({
               </div>
             );
           }.bind(this)) }
+          <div className="collection-option no-hover">
+            <NewCollectionForm _showButton={this._showButton}
+                               focus=""
+                               feed={this.props.feed}/>
+          </div>
       </div>
     );
   }

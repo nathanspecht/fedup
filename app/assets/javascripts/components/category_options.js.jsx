@@ -15,7 +15,7 @@ CategoryOptions = React.createClass ({
                 onClick={this._showForm}>
                 New Collection
         </button>
-        <NewCollectionForm _showButton={this._showButton} hidden={this.state.hidden}/>
+        <NewCollectionForm _showButton={this._showButton} hidden={this.state.hidden} focus="true"/>
       </div>
     );
   }
