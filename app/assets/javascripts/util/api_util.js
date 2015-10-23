@@ -103,11 +103,13 @@ ApiUtil = {
   },
 
   addFeedToCollection: function(feed, collection) {
+    feed.title = this.stripHTML(feed.title);
+    
     $.ajax({
       url: 'api/collectionings',
       type: 'post',
       dataType: 'json',
-      data: {collectioning: {feed_id: feed.id, collection_id: collection.id}},
+      data: {collectioning: {feed: feed, collection_id: collection.id}},
       success: function(data) {
         ApiActions.updateCollection(data.collection);
         ApiActions.updateFeed(data.feed);

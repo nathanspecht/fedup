@@ -1,6 +1,17 @@
 class Api::CollectioningsController < ApplicationController
   def create
-    @collectioning = Collectioning.new(collectioning_params)
+    if !params[:collectioning][:feed][:id]
+      feed = Feed.new({ title: params[:collectioning][:feed][:title],
+                        url: params[:collectioning][:feed][:url] })
+      feed.save!
+      feed_id = feed.id
+    else
+      feed_id = params[:collectioning][:feed][:id]
+    end
+
+    @collectioning = Collectioning.new({feed_id: feed_id,
+                collection_id: params[:collectioning][:collection_id]})
+
     if @collectioning.save!
       @feed = Feed.find(@collectioning.feed_id)
       @collection = Collection.find(@collectioning.collection_id)
@@ -30,6 +41,7 @@ class Api::CollectioningsController < ApplicationController
   private
 
   def collectioning_params
-    params.require(:collectioning).permit(:collection_id, :feed_id)
+    params.require(:collectioning).permit(:collection_id, :feed)
   end
+
 end

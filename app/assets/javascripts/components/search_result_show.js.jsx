@@ -1,6 +1,6 @@
 SearchResultShow = React.createClass({
   getInitialState: function() {
-    return {feeds: SearchStore.all()};
+    return {feeds: SearchStore.all(), feed: null};
   },
   updateFeeds: function() {
     this.setState({feeds: SearchStore.all()});

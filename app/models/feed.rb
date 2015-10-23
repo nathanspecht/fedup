@@ -5,12 +5,12 @@
 #  id          :integer          not null, primary key
 #  title       :string           not null
 #  url         :string           not null
-#  topic       :string           not null
+#  topic       :string
 #  description :text
 #
 
 class Feed < ActiveRecord::Base
-  validates :title, :url, :topic, presence: true
+  validates :title, :url, presence: true
 
   has_many :saved_articles,
   class_name: 'Article',

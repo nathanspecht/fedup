@@ -1,6 +1,6 @@
 FeedShow = React.createClass({
   getInitialState: function() {
-    var feed = FeedStore.find(this.props.params.id) || {};
+    var feed = this.props.feed || FeedStore.find(this.props.params.id) || {};
     return {feed: feed,
             articles: ArticleStore.findByFeed(feed),
             articleHidden: "hidden",
@@ -12,7 +12,7 @@ FeedShow = React.createClass({
   },
 
   _feedsUpdated: function() {
-    this.setState({feed: FeedStore.find(this.props.params.id)});
+    this.setState({feed: this.props.feed || FeedStore.find(this.props.params.id)});
     ApiUtil.fetchArticles(this.state.feed);
   },
 
@@ -28,7 +28,7 @@ FeedShow = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    var feed = FeedStore.find(newProps.params.id);
+    var feed = this.props.feed || FeedStore.find(newProps.params.id);
     ApiUtil.fetchArticles(feed);
     this.setState({ feed: feed, articles: ArticleStore.findByFeed(feed) });
   },
@@ -40,13 +40,14 @@ FeedShow = React.createClass({
   },
 
   render: function() {
+    var tagline = this.state.feed.topic ? "#" + this.state.feed.topic : "";
     return (
       <div className="feed-index">
         <div className="feed-heading">
-          <h1>{this.state.feed.title}</h1>
+          <h1>{ApiUtil.stripHTML(this.state.feed.title)}</h1>
           <AddToCollectionButton feed={this.state.feed}/>
         </div>
-        <div className="tagline">#{this.state.feed.topic}</div>
+        <div className="tagline">{tagline}</div>
         <div>
         {
           this.state.articles.map(function(article, i){
