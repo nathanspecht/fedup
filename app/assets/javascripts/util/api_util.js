@@ -104,7 +104,7 @@ ApiUtil = {
 
   addFeedToCollection: function(feed, collection) {
     feed.title = this.stripHTML(feed.title);
-    
+
     $.ajax({
       url: 'api/collectionings',
       type: 'post',
@@ -118,6 +118,10 @@ ApiUtil = {
   },
 
   removeFeedFromCollection: function(feed, collection) {
+    if (!feed.id) {
+      feed = FeedStore.findByUrl(feed.url);
+    }
+
     $.ajax({
       url: 'api/collectionings',
       type: 'delete',

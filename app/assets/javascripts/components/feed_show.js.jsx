@@ -43,19 +43,25 @@ FeedShow = React.createClass({
     var tagline = this.state.feed.topic ? "#" + this.state.feed.topic : "";
     return (
       <div className="feed-index">
-        <div className="feed-heading">
-          <h1>{ApiUtil.stripHTML(this.state.feed.title)}</h1>
+        <div className={this.props.condensed ? "hidden" : "feed-heading"}>
+          <h1> {ApiUtil.stripHTML(this.state.feed.title)} </h1>
           <AddToCollectionButton feed={this.state.feed}/>
         </div>
         <div className="tagline">{tagline}</div>
         <div>
         {
           this.state.articles.map(function(article, i){
-            console.log(article.link);
-            return <ArticleThumb key={article.link + i}
-                                 article={article}
-                                 showArticle={this.showArticle} />;
-           }.bind(this))
+            return this.props.condensed ? (
+               <CondensedArticleThumb key={article.link + i}
+                                      article={article}
+                                      showArticle={this.showArticle} />
+
+            ) : (
+               <ArticleThumb key={article.link + i}
+                             article={article}
+                             showArticle={this.showArticle} />
+            );
+          }.bind(this))
         }
         </div>
         {

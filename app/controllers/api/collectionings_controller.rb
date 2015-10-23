@@ -1,10 +1,15 @@
 class Api::CollectioningsController < ApplicationController
   def create
     if !params[:collectioning][:feed][:id]
-      feed = Feed.new({ title: params[:collectioning][:feed][:title],
-                        url: params[:collectioning][:feed][:url] })
-      feed.save!
-      feed_id = feed.id
+      feed = Feed.find_by_url(params[:collectioning][:feed][:url])
+      if feed
+        feed_id = feed.id
+      else
+        feed = Feed.new({ title: params[:collectioning][:feed][:title],
+                          url: params[:collectioning][:feed][:url] })
+        feed.save!
+        feed_id = feed.id
+      end
     else
       feed_id = params[:collectioning][:feed][:id]
     end
@@ -24,6 +29,7 @@ class Api::CollectioningsController < ApplicationController
       params[:collectioning][:collection_id],
       params[:collectioning][:feed_id]
     )
+
     if @collectioning && @collectioning.delete
       @feed = Feed.find(@collectioning.feed_id)
       @collection = Collection.find(@collectioning.collection_id)

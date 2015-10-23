@@ -28,7 +28,6 @@
 
 p {
   line-height: 30px;
-  /*font-family: Lora;*/
 }
 
 h1 {
@@ -637,4 +636,55 @@ form {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.article-preview.condensed {
+  margin-bottom: 15px;
+  margin-left: 31px
+}
+
+.condensed h4 {
+  font-size: 19px;
+  font-weight: 500;
+  padding-right: 10px;
+  font-size: 13px;
+  display: block;
+  padding-bottom: 3px;
+}
+
+.condensed h4:hover{
+  cursor: pointer;
+}
+
+.condensed .snippet {
+  font-size: 12px;
+  width: 100%;
+}
+
+.selected-background {
+  background-color: aliceblue;
+  padding-bottom: 1px
+}
+
+.feed-show-condensed {
+  margin-top: -20px;
+}
+
+.search-result-with-articles {
+  padding-left: 10px;
+}
+
+.transition {
+  transition: background-color 2s;
+}
+
+.feed-show-condensed .add-to-collection-button {
+  position: relative;
+  top: 20px;
+  left: 0px;
+  float: none;
+}
+
+.article-content {
+  line-height: 30px;
 }

@@ -29,7 +29,7 @@
     },
 
     find: function(id) {
-      var found = null;
+      var found;
       _feeds.forEach(function(feed){
         if (feed.id === parseInt(id)) {
           found = feed;
@@ -37,6 +37,17 @@
       });
 
       return found;
+    },
+
+    findByUrl: function(url) {
+      var foundFeed;
+      _feeds.forEach(function(feed){
+        if (feed.url === url) {
+          foundFeed = feed;
+        }
+      });
+
+      return foundFeed;
     },
 
     ids: function() {
@@ -54,11 +65,13 @@
     selectedTopics: function() {
       var topics = {};
       _feeds.forEach(function(feed){
-        if (this.isSelectedTopic(feed.topic) || _selectedTopics.length === 0){
-          if (topics[feed.topic]) {
-            topics[feed.topic].push(feed);
-          } else {
-            topics[feed.topic] = [feed];
+        if (feed.topic) {
+          if (this.isSelectedTopic(feed.topic) || _selectedTopics.length === 0){
+            if (topics[feed.topic]) {
+              topics[feed.topic].push(feed);
+            } else {
+              topics[feed.topic] = [feed];
+            }
           }
         }
       }.bind(this));
@@ -68,10 +81,12 @@
     allTopics: function() {
       var topics = {};
       _feeds.forEach(function(feed){
-        if (topics[feed.topic]) {
-          topics[feed.topic].push(feed);
-        } else {
-          topics[feed.topic] = [feed];
+        if (feed.topic) {
+          if (topics[feed.topic]) {
+            topics[feed.topic].push(feed);
+          } else {
+            topics[feed.topic] = [feed];
+          }
         }
       });
       return topics;

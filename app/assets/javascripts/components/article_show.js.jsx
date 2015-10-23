@@ -18,6 +18,10 @@ ArticleShow = React.createClass({
     this._fillContent();
   },
 
+  prevent: function(e) {
+    e.stopPropagation();
+  },
+  
   render: function() {
     var title;
     var saveButton;
@@ -26,7 +30,7 @@ ArticleShow = React.createClass({
       saveButton = <SaveArticleButton article={this.props.article} />;
     }
     return (
-      <div className="article-show">
+      <div className="article-show" onClick={this.prevent}>
         <h1>{title}</h1>
         {saveButton}
         <div ref="articleContent" className="article-content"></div>
