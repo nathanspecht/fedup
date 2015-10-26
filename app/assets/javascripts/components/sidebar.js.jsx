@@ -45,7 +45,7 @@ Sidebar = React.createClass({
   },
   _showAllFeeds: function() {
     this.hideSidebar();
-    this.history.pushState(null, '/all_feeds');
+    this.history.pushState(null, '/explore');
   },
   render: function(){
     return (

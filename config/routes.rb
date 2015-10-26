@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   get '/', to: 'static_pages#index'
   get 'splash', to: 'static_pages#splash'
+  get 'guest_sign_in', to: 'users#new_guest'
 end

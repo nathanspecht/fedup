@@ -1,15 +1,20 @@
-<h1>Sign Up</h1>
+<div class="splash">
+  <div class="login-signup">
+    <div class="to-center">
 
-<form action="<%= users_url %>" method="post">
-  <%= auth_token %>
+    <h1>Sign Up</h1>
 
-  <label>Username
-    <input type="text" name="user[username]">
-  </label>
+    <form action="<%= users_url %>" method="post">
+      <%= auth_token %>
 
-  <label>Password
-    <input type="password" name="user[password]">
-  </label>
+      <input type="text" name="user[username]" placeholder="Username">
 
-  <input type="submit" value="Sign Up">
-</form>
+      <input type="password" name="user[password]" placeholder="Password">
+
+
+      <input type="submit" value="Sign Up">
+    </form>
+
+    </div>
+  </div>
+</div>

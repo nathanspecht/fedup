@@ -8,6 +8,9 @@
   <div class="sign-up" onclick="newUser()">
     <h3>Get Started</h3>
   </div>
+  <div class="sign-up guest">
+    <h3 onclick="newGuestUser()">Guest Login</h3>
+  </div>
   <br>
   <div class="login" onclick="newSession()">
     <h3>Login</h3>
@@ -21,5 +24,16 @@
 
   var newSession = function() {
     window.location.href = "session/new"
+  }
+
+  var newGuestUser = function() {
+    $.ajax({
+      url: "/guest_sign_in",
+      type: "get",
+      dataType: "json",
+      success: function() {
+        window.location.href = "/#/explore"
+      }
+    });
   }
 </script>
