@@ -3,7 +3,7 @@ Fedup is a web application inspired by Feedly, built using Ruby on Rails and Rea
 
 [Live Link!][liveLink]
 
-[liveLink]: www.fedup.xyz
+[liveLink]: http://www.fedup.xyz
 
 ## Features
 
