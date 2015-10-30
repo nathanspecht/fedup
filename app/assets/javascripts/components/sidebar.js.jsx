@@ -43,10 +43,12 @@ Sidebar = React.createClass({
                     style: "compact",
                     expandIcon: "expand-icon"});
   },
+
   _showAllFeeds: function() {
     this.hideSidebar();
     this.history.pushState(null, '/explore');
   },
+  
   render: function(){
     return (
       <div className={"sidebar " + this.state.style}

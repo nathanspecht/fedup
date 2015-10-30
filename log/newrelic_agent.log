@@ -1187,3 +1187,4 @@ DETAIL:  Key (article_id, user_id)=(60, 9) already exists.
 [10/23/15 15:56:26 -0700 MacBook-Pro.local (795)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Missing template api/collectionings/destroy, application/destroy with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
   * "/Users/nathan_specht/Desktop/fedup_project/app/views"
 
+[10/26/15 17:29:15 -0700 MacBook-Pro.local (795)] INFO : Starting Agent shutdown
