@@ -1,12 +1,11 @@
 # Fedup
+Fedup is a web application inspired by Feedly, built using Ruby on Rails and React.js.
 
-[Link][liveLink]
+[Live Link!][liveLink]
 
-[liveLink]: https://www.fedup.xyz
+[liveLink]: www.fedup.xyz
 
 ## Features
-Fedup is a web application inspired by Feedly, built using Ruby on Rails and React.js.
-Fedup allows users to:
 
 - [X] Create an account
 - [X] Log in / Log out
