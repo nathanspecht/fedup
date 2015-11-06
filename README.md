@@ -14,15 +14,6 @@ Fedup is a web application inspired by Feedly, built using Ruby on Rails and Rea
 - [X] Search available RSS feeds by name or topic
 - [X] Save articles to be read later
 
-## To do
-- [ ] Fix sidebar problems with Safari
-- [ ] Article show transitions
-- [ ] Hide articles
-- [ ] Mark articles as read
-- [ ] Remove RSS feeds
-- [ ] Tag articles with multiple tags
-- [ ] Display article view counts
-
 ## Languages and Frameworks
 - Rails
 - Ruby
@@ -36,3 +27,12 @@ Fedup is a web application inspired by Feedly, built using Ruby on Rails and Rea
 - Google Feed API
 - jbuilder
 - BCrypt
+
+## To do
+- [ ] Fix sidebar problems with Safari
+- [ ] Article show transitions
+- [ ] Hide articles
+- [ ] Mark articles as read
+- [ ] Remove RSS feeds
+- [ ] Tag articles with multiple tags
+- [ ] Display article view counts
