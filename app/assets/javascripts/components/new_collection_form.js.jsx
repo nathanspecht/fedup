@@ -33,7 +33,7 @@ NewCollectionForm = React.createClass({
   },
 
   render: function() {
-    var placeholder = this.props.focus ? "" : "New Collection";
+    var placeholder = this.props.focus ? "" : "Type here to create a new collection";
     return (
       <div className={this.props.hidden}>
         <form onSubmit={this._addCollection}>

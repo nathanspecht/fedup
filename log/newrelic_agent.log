@@ -1188,3 +1188,42 @@ DETAIL:  Key (article_id, user_id)=(60, 9) already exists.
   * "/Users/nathan_specht/Desktop/fedup_project/app/views"
 
 [10/26/15 17:29:15 -0700 MacBook-Pro.local (795)] INFO : Starting Agent shutdown
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] INFO : Starting the New Relic agent in "development" environment.
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] WARN : No configuration file found. Working directory = /Users/nathan_specht/Desktop/fedup_project
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] WARN : Looked in these locations (based on defaults): /Users/nathan_specht/Desktop/fedup_project/config/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/config/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/newrelic.yml, /Users/nathan_specht/.newrelic/newrelic.yml, /Users/nathan_specht/newrelic.yml
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] INFO : Environment: development
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] INFO : Dispatcher: webrick
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] INFO : Application: development
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] INFO : Installing ActiveJob instrumentation
+[11/06/15 14:06:55 -0800 MacBook-Pro.local (48327)] INFO : Installing ActiveRecord 4 instrumentation
+[11/06/15 14:06:56 -0800 MacBook-Pro.local (48327)] INFO : Installing Net instrumentation
+[11/06/15 14:06:56 -0800 MacBook-Pro.local (48327)] INFO : Installing deferred Rack instrumentation
+[11/06/15 14:06:56 -0800 MacBook-Pro.local (48327)] INFO : Installing Rack::Builder middleware instrumentation
+[11/06/15 14:06:56 -0800 MacBook-Pro.local (48327)] INFO : Installing Rails 3+ middleware instrumentation
+[11/06/15 14:06:56 -0800 MacBook-Pro.local (48327)] INFO : Installing Rails 4 Controller instrumentation
+[11/06/15 14:06:56 -0800 MacBook-Pro.local (48327)] INFO : Installing Rails 4 view instrumentation
+[11/06/15 14:06:56 -0800 MacBook-Pro.local (48327)] INFO : Installing Rails 4 Error instrumentation
+[11/06/15 14:06:56 -0800 MacBook-Pro.local (48327)] INFO : Finished instrumentation
+[11/06/15 14:06:57 -0800 MacBook-Pro.local (48327)] INFO : Doing deferred dependency-detection before Rack startup
+[11/06/15 14:08:02 -0800 MacBook-Pro.local (48327)] ERROR : Invalid license key, please contact support@newrelic.com
+[11/06/15 14:08:02 -0800 MacBook-Pro.local (48327)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] INFO : Starting the New Relic agent in "development" environment.
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] WARN : No configuration file found. Working directory = /Users/nathan_specht/Desktop/fedup_project
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] WARN : Looked in these locations (based on defaults): /Users/nathan_specht/Desktop/fedup_project/config/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/config/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/newrelic.yml, /Users/nathan_specht/.newrelic/newrelic.yml, /Users/nathan_specht/newrelic.yml
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] INFO : Environment: development
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] INFO : No known dispatcher detected.
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] INFO : Application: development
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] INFO : Installing ActiveJob instrumentation
+[11/06/15 14:17:33 -0800 MacBook-Pro.local (48480)] INFO : Installing ActiveRecord 4 instrumentation
+[11/06/15 14:17:34 -0800 MacBook-Pro.local (48480)] INFO : Installing Net instrumentation
+[11/06/15 14:17:34 -0800 MacBook-Pro.local (48480)] INFO : Installing deferred Rack instrumentation
+[11/06/15 14:17:34 -0800 MacBook-Pro.local (48480)] INFO : Installing Rack::Builder middleware instrumentation
+[11/06/15 14:17:34 -0800 MacBook-Pro.local (48480)] INFO : Installing Rails 3+ middleware instrumentation
+[11/06/15 14:17:34 -0800 MacBook-Pro.local (48480)] INFO : Installing Rails 4 Controller instrumentation
+[11/06/15 14:17:34 -0800 MacBook-Pro.local (48480)] INFO : Installing Rails 4 view instrumentation
+[11/06/15 14:17:34 -0800 MacBook-Pro.local (48480)] INFO : Installing Rails 4 Error instrumentation
+[11/06/15 14:17:34 -0800 MacBook-Pro.local (48480)] INFO : Finished instrumentation
