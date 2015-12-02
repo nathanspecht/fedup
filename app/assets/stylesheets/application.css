@@ -15,10 +15,9 @@
  */
 
 #content {
-  position: absolute;
   font-family: helvetica;
   height: 100%;
-  width: 110%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -80,7 +79,7 @@ h3 {
   display: inline-block;
   width: 80%;
   margin: auto;
-  margin-left: 50px;
+  margin-left: 200px;
 }
 
 .thumb-image {
@@ -134,14 +133,16 @@ h3 {
 }
 
 .article-show {
-  width: 76%;
+  width: 75%;
   position: fixed;
   top: 0px;
   right: 0%;
   background-color: white;
   height: 100%;
   padding-left: 50px;
-  overflow: scroll;
+  padding-right: 50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .article-mod {
@@ -173,9 +174,8 @@ img {
   background-color: #F7F7F7;
   height: 100%;
   clear: both;
-  position: relative;
+  position: fixed;
   transition: width 0.5s;
-  overflow-x: hidden;
   display: inline-block;
   margin: 0px;
 }
@@ -193,8 +193,7 @@ img {
 
 .full {
   overflow-x: hidden;
-  width: 15%;
-  max-width: 220px;
+  width: 180px;
 }
 
 .nav-menu {
