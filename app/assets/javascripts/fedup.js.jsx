@@ -36,7 +36,5 @@ var routes = (
 );
 
 function RenderApp () {
-  google.load("feeds", "1", { callback: function () {
-    React.render(<Router>{ routes }</Router>, document.getElementById('content'));
-  } });
+  React.render(<Router>{ routes }</Router>, document.getElementById('content'));
 }

@@ -11,11 +11,13 @@ class Api::FeedsController < ApplicationController
     articles = []
     feed.entries.each do |entry|
       article = Article.new
-      article.contentSnippet = entry.summary[0..120]
+      summary = ActionView::Base.full_sanitizer.sanitize(entry.summary) ||
+                ActionView::Base.full_sanitizer.sanitize(entry.content)
+      article.contentSnippet = summary[0..120]
       article.link = entry.url
       article.author = entry.author
       article.publishedDate = entry.published
-      article.content = entry.content
+      article.content = entry.content || entry.summary
       article.title = entry.title
       article.categories = entry.categories
       articles.push(article)
