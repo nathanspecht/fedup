@@ -33,9 +33,11 @@ FeedShow = React.createClass({
     this.setState({ feed: feed, articles: ArticleStore.findByFeed(feed) });
   },
   showArticle: function(article) {
+    document.getElementById("body").className = "no-scroll";
     this.setState({articleHidden: "", article: article});
   },
   hideArticle: function() {
+    document.getElementById("body").className = "";
     this.setState({articleHidden: "hidden"});
   },
 

@@ -139,8 +139,8 @@ h3 {
   right: 0%;
   background-color: white;
   height: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 70px;
+  padding-right: 70px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -720,4 +720,8 @@ form {
 .article-content {
   line-height: 30px;
   font-size: 15px;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

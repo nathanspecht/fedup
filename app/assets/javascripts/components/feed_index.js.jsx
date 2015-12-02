@@ -16,9 +16,11 @@ FeedIndex = React.createClass({
     CollectionStore.removeChangeListener(this._collectionChange);
   },
   showArticle: function(article) {
+    document.getElementById("body").className = "no-scroll";
     this.setState({articleHidden: "", article: article});
   },
   hideArticle: function() {
+    document.getElementById("body").className = "";
     this.setState({articleHidden: "hidden"});
   },
   render: function() {

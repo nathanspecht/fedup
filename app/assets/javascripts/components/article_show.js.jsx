@@ -16,6 +16,7 @@ ArticleShow = React.createClass({
   },
 
   componentDidUpdate: function() {
+    React.findDOMNode(this.refs.articleShow).scrollTop = 0;
     this._fillContent();
     this.hideSmallImages();
   },
@@ -42,7 +43,9 @@ ArticleShow = React.createClass({
       saveButton = <SaveArticleButton article={this.props.article} />;
     }
     return (
-      <div className="article-show" onClick={this.prevent}>
+      <div className="article-show"
+           onClick={this.prevent}
+           ref="articleShow">
         <h1>{title}</h1>
         {saveButton}
         <div ref="articleContent" className="article-content"></div>

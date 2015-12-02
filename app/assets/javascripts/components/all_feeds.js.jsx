@@ -2,21 +2,29 @@ AllFeeds = React.createClass({
   getInitialState: function() {
     return {topics: FeedStore.selectedTopics(), article: null, articleHidden: "hidden"};
   },
+  
   updateFeeds: function() {
     this.setState({topics: FeedStore.selectedTopics()});
   },
+
   componentDidMount: function() {
     FeedStore.addChangeListener(this.updateFeeds);
   },
+
   componenetWillUnmount: function() {
     FeedStore.removeChangeListener(this.updateFeeds);
   },
+
   showArticle: function(article) {
+    document.getElementById("body").className = "no-scroll";
     this.setState({articleHidden: "", article: article});
   },
+
   hideArticle: function() {
+    document.getElementById("body").className = "";
     this.setState({articleHidden: "hidden"});
   },
+
   render: function() {
     return (
       <div className="feed-index">
