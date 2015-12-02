@@ -68,19 +68,26 @@ ApiUtil = {
   },
 
   fetchArticles: function(feed) {
-    var rssfeed = new google.feeds.Feed(feed.url);
-    rssfeed.includeHistoricalEntries();
-    rssfeed.setNumEntries(10);
-    rssfeed.load(function(result){
-      ApiActions.receiveArticles(result.feed.entries, feed);
+    $.ajax({
+      url: 'api/feeds/:id',
+      type: 'get',
+      dataType: 'json',
+      data: {feed_url: feed.url},
+      success: function(articles) {
+        ApiActions.receiveArticles(articles, feed);
+      }
     });
   },
 
   fetchFirstArticle: function(feed) {
-    var rssfeed = new google.feeds.Feed(feed.url);
-    rssfeed.setNumEntries(1);
-    rssfeed.load(function(result){
-      ApiActions.receiveArticles(result.feed.entries, feed);
+    $.ajax({
+      url: 'api/feeds/:id',
+      type: 'get',
+      dataType: 'json',
+      data: {feed_url: feed.url},
+      success: function(articles) {
+        ApiActions.receiveArticles(articles, feed);
+      }
     });
   },
 

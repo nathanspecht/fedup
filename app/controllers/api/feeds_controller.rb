@@ -7,9 +7,25 @@ class Api::FeedsController < ApplicationController
   end
 
   def show
+    feed = Feedjira::Feed.fetch_and_parse params[:feed_url]
+    articles = []
+    feed.entries.each do |entry|
+      article = Article.new
+      article.contentSnippet = entry.summary[0..120]
+      article.link = entry.url
+      article.author = entry.author
+      article.publishedDate = entry.published
+      article.content = entry.content
+      article.title = entry.title
+      article.categories = entry.categories
+      articles.push(article)
+    end
+
+    render json: articles
   end
 
   def index
     @feeds = Feed.all
   end
+
 end
