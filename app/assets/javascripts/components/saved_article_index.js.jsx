@@ -16,9 +16,11 @@ SavedArticleIndex = React.createClass({
     ArticleStore.removeChangeListener(this._articlesUpdated);
   },
   showArticle: function(article) {
+    document.getElementById("body").className = "no-scroll";
     this.setState({articleHidden: "", article: article});
   },
   hideArticle: function() {
+    document.getElementById("body").className = "";
     this.setState({articleHidden: "hidden"});
   },
   render: function() {
