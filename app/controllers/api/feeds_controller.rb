@@ -13,7 +13,7 @@ class Api::FeedsController < ApplicationController
       article = Article.new
       summary = ActionView::Base.full_sanitizer.sanitize(entry.summary) ||
                 ActionView::Base.full_sanitizer.sanitize(entry.content)
-      article.contentSnippet = summary[0..120]
+      article.contentSnippet = summary[0..120] if summary
       article.link = entry.url
       article.author = entry.author
       article.publishedDate = entry.published
