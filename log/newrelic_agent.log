@@ -1454,3 +1454,28 @@ DETAIL:  Key (article_id, user_id)=(60, 9) already exists.
 [12/07/15 18:22:21 -0800 MacBook-Pro.local (5344)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /Users/nathan_specht/Desktop/fedup_project/app/controllers/api/feeds_controller.rb:11: syntax error, unexpected tCONSTANT, expecting keyword_end
            Feedjira::Feed.fetch_and_parse Feed.find(params[:id]).url
                                               ^
+[12/08/15 09:46:09 -0800 MacBook-Pro.local (5344)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: No valid parser for XML.
+[12/08/15 09:46:11 -0800 MacBook-Pro.local (5344)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: No valid parser for XML.
+[12/08/15 09:46:12 -0800 MacBook-Pro.local (5344)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: No valid parser for XML.
+[12/08/15 09:51:55 -0800 MacBook-Pro.local (5344)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: No valid parser for XML.
+[12/08/15 09:51:56 -0800 MacBook-Pro.local (5344)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: No valid parser for XML.
+[12/08/15 09:51:56 -0800 MacBook-Pro.local (5344)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: No valid parser for XML.
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] INFO : Starting the New Relic agent in "development" environment.
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] WARN : No configuration file found. Working directory = /Users/nathan_specht/Desktop/fedup_project
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] WARN : Looked in these locations (based on defaults): /Users/nathan_specht/Desktop/fedup_project/config/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/config/newrelic.yml, /Users/nathan_specht/Desktop/fedup_project/newrelic.yml, /Users/nathan_specht/.newrelic/newrelic.yml, /Users/nathan_specht/newrelic.yml
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] INFO : Environment: development
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] INFO : No known dispatcher detected.
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] INFO : Application: development
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] INFO : Installing ActiveJob instrumentation
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] INFO : Installing ActiveRecord 4 instrumentation
+[12/08/15 09:57:25 -0800 MacBook-Pro.local (8383)] INFO : Installing Net instrumentation
+[12/08/15 09:57:26 -0800 MacBook-Pro.local (8383)] INFO : Installing deferred Rack instrumentation
+[12/08/15 09:57:26 -0800 MacBook-Pro.local (8383)] INFO : Installing Rack::Builder middleware instrumentation
+[12/08/15 09:57:26 -0800 MacBook-Pro.local (8383)] INFO : Installing Rails 3+ middleware instrumentation
+[12/08/15 09:57:26 -0800 MacBook-Pro.local (8383)] INFO : Installing Rails 4 Controller instrumentation
+[12/08/15 09:57:26 -0800 MacBook-Pro.local (8383)] INFO : Installing Rails 4 view instrumentation
+[12/08/15 09:57:26 -0800 MacBook-Pro.local (8383)] INFO : Installing Rails 4 Error instrumentation
+[12/08/15 09:57:26 -0800 MacBook-Pro.local (8383)] INFO : Finished instrumentation
+[12/08/15 09:58:03 -0800 MacBook-Pro.local (5344)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Validation failed: Feed feed and collection already joined

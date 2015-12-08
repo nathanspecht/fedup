@@ -168,9 +168,9 @@ Feed.create!([
   {title: "Colossal", url: "http://feeds.feedburner.com/colossal", topic: "Art"},
   {title: "Picdit", url: "http://picdit.net/feed/", topic: "Art"},
   {title: "Polygon", url: "https://www.polygon.com/rss/group/news/index.xml", topic: "Gaming"},
-  {title: "Design Milk", url: "http://fulltextrssfeed.com/design-milk.com/feeds", topic: "Design"},
-  {title: "Dezeen", url: "http://fulltextrssfeed.com/dezeen.com", topic: "Design"},
-  {title: "Core77", url: "http://fulltextrssfeed.com/www.core77.com/feed", topic: "Design"}
+  {title: "Design Milk", url: "http://feeds.feedburner.com/design-milk", topic: "Design"},
+  {title: "Dezeen", url: "http://feeds.feedburner.com/dezeen", topic: "Design"},
+  {title: "Core77", url: "http://feeds.feedburner.com/core77/blog", topic: "Design"}
 ])
 Save.create!([
   {article_id: 4, user_id: 1},
