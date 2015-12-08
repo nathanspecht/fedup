@@ -7,7 +7,8 @@ class Api::FeedsController < ApplicationController
   end
 
   def show
-    feed = Feedjira::Feed.fetch_and_parse params[:feed_url]
+    feed = Feedjira::Feed.fetch_and_parse(params[:feed_url]) ||
+           Feedjira::Feed.fetch_and_parse(Feed.find(params[:id]).url)
     articles = []
     feed.entries.each do |entry|
       article = Article.new
