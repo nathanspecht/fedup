@@ -69,7 +69,7 @@ ApiUtil = {
 
   fetchArticles: function(feed) {
     $.ajax({
-      url: 'api/feeds/:id',
+      url: 'api/feeds/' + feed.id,
       type: 'get',
       dataType: 'json',
       data: {feed_url: feed.url},
@@ -81,7 +81,7 @@ ApiUtil = {
 
   fetchFirstArticle: function(feed) {
     $.ajax({
-      url: 'api/feeds/:id',
+      url: 'api/feeds/' + feed.id,
       type: 'get',
       dataType: 'json',
       data: {feed_url: feed.url},
