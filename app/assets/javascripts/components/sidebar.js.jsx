@@ -48,7 +48,7 @@ Sidebar = React.createClass({
     this.hideSidebar();
     this.history.pushState(null, '/explore');
   },
-  
+
   render: function(){
     return (
       <div className={"sidebar " + this.state.style}
@@ -62,6 +62,7 @@ Sidebar = React.createClass({
         <div className={"sidebar-content " + this.state.hidden}>
             <ul className="nav-menu">
               <Link to="/" onClick={this.hideSidebar}>Most Recent</Link>
+              <Link to="/explore" onClick={this.hideSidebar}>Explore</Link>
               <Link to="/saved" onClick={this.hideSidebar}>Saved</Link>
             </ul>
             <ul className="category-nav">
@@ -80,10 +81,6 @@ Sidebar = React.createClass({
               }
             </ul>
             <CategoryOptions />
-            <button className="button"
-                    onClick={this._showAllFeeds}>
-                    Add to Collections
-            </button>
           <div className={"user-options " + this.state.hidden}>
             <div className="username">{window.CURRENT_USER.username}</div>
             <button className="button"
