@@ -4,7 +4,9 @@ ApiUtil = {
       url: 'api/feeds',
       type: 'get',
       dataType: 'json',
-      data: { params: params },
+      data: { 
+        params: params 
+      },
       success: function(feeds) {
         ApiActions.receiveAll(feeds);
       }
@@ -38,7 +40,9 @@ ApiUtil = {
       url: 'api/articles',
       type: 'post',
       dataType: 'json',
-      data: { article: article },
+      data: { 
+        article: article 
+      },
       success: function(article) {
         ApiActions.receiveSavedArticles([article]);
       }
@@ -50,7 +54,9 @@ ApiUtil = {
       url: 'api/saves',
       type: 'delete',
       dataType: 'json',
-      data: { article: article },
+      data: { 
+        article: article 
+      },
       success: function(data) {
         ApiActions.removeSavedArticle(data.articleLink);
       }
@@ -72,7 +78,9 @@ ApiUtil = {
       url: 'api/feeds/' + feed.id,
       type: 'get',
       dataType: 'json',
-      data: {feed_url: feed.url},
+      data: {
+        feed_url: feed.url
+      },
       success: function(articles) {
         ApiActions.receiveArticles(articles, feed);
       }
@@ -84,7 +92,9 @@ ApiUtil = {
       url: 'api/feeds/' + feed.id,
       type: 'get',
       dataType: 'json',
-      data: {feed_url: feed.url},
+      data: {
+        feed_url: feed.url
+      },
       success: function(articles) {
         ApiActions.receiveArticles(articles, feed);
       }
@@ -102,7 +112,9 @@ ApiUtil = {
       url: 'api/collections',
       type: 'post',
       dataType: 'json',
-      data: {collection: collection},
+      data: {
+        collection: collection
+      },
       success: function(collection) {
         ApiActions.receiveCollections([collection]);
       }
@@ -114,7 +126,9 @@ ApiUtil = {
       url: 'api/collections',
       type: 'post',
       dataType: 'json',
-      data: {collection: collection},
+      data: {
+        collection: collection
+      },
       success: function(collection) {
         ApiActions.receiveCollections([collection]);
         ApiUtil.addFeedToCollection(feed, collection);
@@ -129,7 +143,12 @@ ApiUtil = {
       url: 'api/collectionings',
       type: 'post',
       dataType: 'json',
-      data: {collectioning: {feed: feed, collection_id: collection.id}},
+      data: {
+        collectioning: {
+          feed: feed, 
+          collection_id: collection.id
+        }
+      },
       success: function(data) {
         ApiActions.updateCollection(data.collection);
         ApiActions.updateFeed(data.feed);
@@ -146,7 +165,12 @@ ApiUtil = {
       url: 'api/collectionings',
       type: 'delete',
       dataType: 'json',
-      data: {collectioning: {feed_id: feed.id, collection_id: collection.id}},
+      data: {
+        collectioning: {
+          feed_id: feed.id, 
+          collection_id: collection.id
+        }
+      },
       success: function(data) {
         ApiActions.updateCollection(data.collection);
         ApiActions.updateFeed(data.feed);

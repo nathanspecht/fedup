@@ -1500,3 +1500,25 @@ DETAIL:  Key (article_id, user_id)=(60, 9) already exists.
 [12/11/15 12:56:27 -0800 MacBook-Pro.local (15931)] INFO : Doing deferred dependency-detection before Rack startup
 [12/11/15 12:56:42 -0800 MacBook-Pro.local (15931)] ERROR : Invalid license key, please contact support@newrelic.com
 [12/11/15 12:56:42 -0800 MacBook-Pro.local (15931)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[12/11/15 17:26:21 -0800 MacBook-Pro.local (15931)] INFO : Starting Agent shutdown
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] INFO : Starting the New Relic agent in "development" environment.
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] WARN : No configuration file found. Working directory = /Users/nathan_specht/workspace/fedup_project
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] WARN : Looked in these locations (based on defaults): /Users/nathan_specht/workspace/fedup_project/config/newrelic.yml, /Users/nathan_specht/workspace/fedup_project/newrelic.yml, /Users/nathan_specht/workspace/fedup_project/config/newrelic.yml, /Users/nathan_specht/workspace/fedup_project/newrelic.yml, /Users/nathan_specht/.newrelic/newrelic.yml, /Users/nathan_specht/newrelic.yml
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] INFO : Environment: development
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] INFO : Dispatcher: webrick
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] INFO : Application: development
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] INFO : Installing ActiveJob instrumentation
+[04/28/16 09:57:03 -0700 MacBook-Pro.local (13792)] INFO : Installing ActiveRecord 4 instrumentation
+[04/28/16 09:57:04 -0700 MacBook-Pro.local (13792)] INFO : Installing Net instrumentation
+[04/28/16 09:57:04 -0700 MacBook-Pro.local (13792)] INFO : Installing deferred Rack instrumentation
+[04/28/16 09:57:04 -0700 MacBook-Pro.local (13792)] INFO : Installing Rack::Builder middleware instrumentation
+[04/28/16 09:57:04 -0700 MacBook-Pro.local (13792)] INFO : Installing Rails 3+ middleware instrumentation
+[04/28/16 09:57:04 -0700 MacBook-Pro.local (13792)] INFO : Installing Rails 4 Controller instrumentation
+[04/28/16 09:57:04 -0700 MacBook-Pro.local (13792)] INFO : Installing Rails 4 view instrumentation
+[04/28/16 09:57:04 -0700 MacBook-Pro.local (13792)] INFO : Installing Rails 4 Error instrumentation
+[04/28/16 09:57:04 -0700 MacBook-Pro.local (13792)] INFO : Finished instrumentation
+[04/28/16 09:57:05 -0700 MacBook-Pro.local (13792)] INFO : Doing deferred dependency-detection before Rack startup
+[04/28/16 09:57:36 -0700 MacBook-Pro.local (13792)] ERROR : Invalid license key, please contact support@newrelic.com
+[04/28/16 09:57:36 -0700 MacBook-Pro.local (13792)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
